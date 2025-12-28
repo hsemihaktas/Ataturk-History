@@ -19,6 +19,10 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
             {
                 url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Zübeyde_Hanım.jpg',
                 label: 'Mother Zubeyde Hanim'
+            },
+            {
+                url: 'https://isteataturk.com/gorseller/1508350591_ataturk.jpg',
+                label: 'Father Ali Riza Efendi'
             }
         ]
     },

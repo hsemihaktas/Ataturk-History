@@ -13,9 +13,13 @@ export default function EventGallery({ event }: EventGalleryProps) {
 
     return (
         <section className="h-[28%] md:h-[45%] min-h-[200px] md:min-h-[350px] w-full bg-[#0a0a0a] flex flex-col justify-start md:justify-center items-center px-4 py-4 md:py-8 overflow-hidden relative border-b border-white/5">
-            <div className="absolute top-4 md:top-6 left-4 md:left-8 flex items-center gap-2 md:gap-3 z-20">
-                <History className="text-red-600 w-5 h-5 md:w-6 md:h-6" />
-                <h1 className="text-white font-bold text-sm md:text-lg tracking-wider font-serif uppercase">
+            <div className="absolute top-4 md:top-6 left-4 md:left-8 flex items-center gap-3 md:gap-4 z-20">
+                <img
+                    src="/icon.jpg"
+                    alt="Atatürk"
+                    className="w-8 h-8 md:w-10 md:h-10 rounded-full object-cover border-2 border-white/20 shadow-lg"
+                />
+                <h1 className="text-white font-bold text-sm md:text-lg tracking-wider font-serif uppercase shadow-black drop-shadow-md">
                     {language === 'tr' ? 'Gazi Mustafa Kemal Atatürk Arşivi' : 'Gazi Mustafa Kemal Atatürk Archive'}
                 </h1>
             </div>
