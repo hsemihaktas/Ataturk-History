@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { MapPin, ExternalLink, Info, Volume2, Square } from 'lucide-react';
 import { HistoricalEvent } from '@/lib/types';
 import { CATEGORY_COLORS, CATEGORY_LABELS, CATEGORY_LABELS_EN } from '@/lib/data/config';
@@ -8,76 +7,15 @@ interface EventInfoCardProps {
     event: HistoricalEvent;
     showInfo: boolean;
     onToggle: () => void;
+    isSpeaking: boolean;
+    onToggleSpeech: () => void;
 }
 
-export default function EventInfoCard({ event, showInfo, onToggle }: EventInfoCardProps) {
+export default function EventInfoCard({ event, showInfo, onToggle, isSpeaking, onToggleSpeech }: EventInfoCardProps) {
     const { language } = useLanguage();
-    const [isSpeaking, setIsSpeaking] = useState(false);
-    const [voice, setVoice] = useState<SpeechSynthesisVoice | null>(null);
 
     // Get correct category labels based on language
     const categoryLabels = language === 'tr' ? CATEGORY_LABELS : CATEGORY_LABELS_EN;
-
-    useEffect(() => {
-        const loadVoices = () => {
-            const voices = window.speechSynthesis.getVoices();
-
-            if (language === 'tr') {
-                // Filter for Turkish voices
-                const trVoices = voices.filter(v => v.lang.includes('tr'));
-                if (trVoices.length > 0) {
-                    const preferredVoice = trVoices.find(v =>
-                        v.name.includes('Google') ||
-                        v.name.includes('Yelda') ||
-                        v.name.includes('Siri') ||
-                        v.name.includes('Natural')
-                    );
-                    setVoice(preferredVoice || trVoices[0]);
-                }
-            } else {
-                // Filter for English voices
-                const enVoices = voices.filter(v => v.lang.includes('en'));
-                if (enVoices.length > 0) {
-                    // Prefer natural sounding English voices
-                    const preferredVoice = enVoices.find(v =>
-                        v.name.includes('Google US') ||
-                        v.name.includes('Samantha') ||
-                        v.name.includes('Arthur') ||
-                        v.name.includes('Natural')
-                    );
-                    setVoice(preferredVoice || enVoices[0]);
-                }
-            }
-        };
-
-        loadVoices();
-
-        if (window.speechSynthesis.onvoiceschanged !== undefined) {
-            window.speechSynthesis.onvoiceschanged = loadVoices;
-        }
-
-        window.speechSynthesis.cancel();
-        setIsSpeaking(false);
-        return () => {
-            window.speechSynthesis.cancel();
-        };
-    }, [event.id, language]);
-
-    const handleSpeak = () => {
-        if (isSpeaking) {
-            window.speechSynthesis.cancel();
-            setIsSpeaking(false);
-        } else {
-            const utterance = new SpeechSynthesisUtterance(event.description);
-            utterance.lang = language === 'tr' ? 'tr-TR' : 'en-US';
-            if (voice) {
-                utterance.voice = voice;
-            }
-            utterance.onend = () => setIsSpeaking(false);
-            window.speechSynthesis.speak(utterance);
-            setIsSpeaking(true);
-        }
-    };
 
     return (
         <>
@@ -106,7 +44,7 @@ export default function EventInfoCard({ event, showInfo, onToggle }: EventInfoCa
                         </div>
                         <div className="flex items-center gap-2">
                             <button
-                                onClick={handleSpeak}
+                                onClick={onToggleSpeech}
                                 className="w-8 h-8 flex items-center justify-center rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-600 transition-colors"
                                 title={language === 'tr' ? "Sesli Anlatım" : "Read Aloud"}
                             >

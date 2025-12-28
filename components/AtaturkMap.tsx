@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import { HistoricalEvent } from '@/lib/types';
@@ -11,7 +11,8 @@ import EventInfoCard from './EventInfoCard';
 import EventTimeline from './EventTimeline';
 import EventMarker from './EventMarker';
 import { LanguageProvider, useLanguage } from '@/lib/context/LanguageContext';
-import { Globe } from 'lucide-react';
+import { Globe, Play, Square, Pause } from 'lucide-react';
+import { useTTS } from '@/lib/hooks/useTTS';
 
 // Dynamically import MapRefocus to avoid SSR issues
 const MapRefocus = dynamic(() => import('./MapRefocus'), { ssr: false });
@@ -24,10 +25,47 @@ function AtaturkMapContent() {
     const { language, setLanguage } = useLanguage();
     const currentEvents = language === 'tr' ? ATATURK_CHRONOLOGY : ATATURK_CHRONOLOGY_EN;
 
-    // Initialize with the first event of the current language data
+    // Initialize with the first event
     const [selectedEvent, setSelectedEvent] = useState<HistoricalEvent>(currentEvents[0]);
     const [showInfo, setShowInfo] = useState(true);
-    const [mapZoom] = useState(7);
+    const [mapZoom] = useState(9);
+
+    // Tour state
+    const [isTourActive, setIsTourActive] = useState(false);
+    const [isTourPaused, setIsTourPaused] = useState(false);
+    const tourTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+    // Refs for state access in callbacks (to avoid stale closures)
+    const isTourActiveRef = useRef(isTourActive);
+    const isTourPausedRef = useRef(isTourPaused);
+    const selectedEventRef = useRef(selectedEvent);
+
+    // Sync refs with state
+    useEffect(() => {
+        isTourActiveRef.current = isTourActive;
+        isTourPausedRef.current = isTourPaused;
+        selectedEventRef.current = selectedEvent;
+    }, [isTourActive, isTourPaused, selectedEvent]);
+
+    // TTS Hook
+    const { speak, cancel, isSpeaking } = useTTS({
+        language,
+        onEnd: () => {
+            // Check refs instead of state
+            if (isTourActiveRef.current && !isTourPausedRef.current) {
+                tourTimeoutRef.current = setTimeout(() => {
+                    playNextEvent();
+                }, 1000);
+            }
+        }
+    });
+
+    // Cleanup tour timeout
+    useEffect(() => {
+        return () => {
+            if (tourTimeoutRef.current) clearTimeout(tourTimeoutRef.current);
+        };
+    }, []);
 
     // Sync selected event when language changes
     useEffect(() => {
@@ -37,14 +75,25 @@ function AtaturkMapContent() {
         } else {
             setSelectedEvent(currentEvents[0]);
         }
-    }, [language]); // Only run when language changes
+        // If tour was active, it might restart logic or we should stop it to avoid confusion
+        if (isTourActive) {
+            stopTour();
+        }
+    }, [language]);
 
+    // Handle manual event select
     const handleEventSelect = (event: HistoricalEvent) => {
-        // Find the event in the current list to ensure consistency (especially if passed from marker)
+        // If user manually selects an event while tour is active, we pause/stop the tour?
+        // Let's stop the tour to give control back to user
+        if (isTourActive) {
+            stopTour();
+        }
+
         const evt = currentEvents.find(e => e.id === event.id) || event;
         setSelectedEvent(evt);
+        cancel();
+
         if (typeof window !== 'undefined' && window.innerWidth < 768) {
-            // Auto show info on mobile when selecting new event
             setShowInfo(true);
         }
     };
@@ -52,10 +101,65 @@ function AtaturkMapContent() {
     // Safe initial center
     const initialCenter = useMemo(() => {
         return isValidCoords(selectedEvent.coordinates) ? selectedEvent.coordinates : [39.9334, 32.8597];
-    }, []); // Keep empty dependency to only set once on mount
+    }, []);
 
     const toggleLanguage = () => {
         setLanguage(language === 'tr' ? 'en' : 'tr');
+    };
+
+    // --- Tour Logic ---
+    const startTour = () => {
+        setIsTourActive(true);
+        setIsTourPaused(false);
+        // Force ref update immediately for the upcoming callback
+        isTourActiveRef.current = true;
+        isTourPausedRef.current = false;
+
+        // Resume from current event description
+        // Use the event from ref to be safe, though state should differ only by render cycle
+        speak(selectedEventRef.current.description);
+    };
+
+    const stopTour = () => {
+        setIsTourActive(false);
+        setIsTourPaused(false);
+        cancel();
+        if (tourTimeoutRef.current) clearTimeout(tourTimeoutRef.current);
+    };
+
+    const toggleTour = () => {
+        if (isTourActive) {
+            stopTour();
+        } else {
+            startTour();
+        }
+    };
+
+    const playNextEvent = () => {
+        // Use ref for current event ID
+        const currentId = selectedEventRef.current.id;
+        const currentIndex = currentEvents.findIndex(e => e.id === currentId);
+
+        if (currentIndex < currentEvents.length - 1) {
+            const nextEvent = currentEvents[currentIndex + 1];
+            setSelectedEvent(nextEvent);
+            // speak will be called, and logic continues...
+            speak(nextEvent.description);
+        } else {
+            // End of tour
+            stopTour();
+        }
+    };
+
+    // Toggle manual speech for the current card (not tour)
+    const toggleSpeech = () => {
+        if (isSpeaking) {
+            cancel();
+            // If dragging slider or something, we stop tour too? 
+            if (isTourActive) stopTour();
+        } else {
+            speak(selectedEvent.description);
+        }
     };
 
     return (
@@ -63,18 +167,41 @@ function AtaturkMapContent() {
             {/* Top Gallery Section - Dynamic Height */}
             <EventGallery event={selectedEvent} />
 
-            {/* Language Switcher */}
-            <button
-                onClick={toggleLanguage}
-                className="absolute top-4 right-4 z-[2000] bg-white/90 backdrop-blur-md text-black px-4 py-2 rounded-full shadow-lg font-bold text-xs flex items-center gap-3 hover:bg-white transition-all border border-black/10"
-            >
-                <Globe size={14} />
-                <div className="flex items-center gap-2">
-                    <span className={language === 'tr' ? 'text-black' : 'text-stone-400 font-medium'}>TR</span>
-                    <span className="text-stone-300">|</span>
-                    <span className={language === 'en' ? 'text-black' : 'text-stone-400 font-medium'}>EN</span>
-                </div>
-            </button>
+            {/* Top Controls Container */}
+            <div className="absolute top-4 right-4 z-[2000] flex items-center gap-3">
+                {/* Tour Button */}
+                <button
+                    onClick={toggleTour}
+                    className={`
+                        px-4 py-2 rounded-full shadow-lg font-bold text-xs flex items-center gap-2 transition-all border border-black/10
+                        ${isTourActive
+                            ? 'bg-red-600 text-white hover:bg-red-700'
+                            : 'bg-white/90 backdrop-blur-md text-black hover:bg-white'
+                        }
+                    `}
+                >
+                    {isTourActive ? <Pause size={14} className="fill-current" /> : <Play size={14} className="fill-current" />}
+                    <span>
+                        {language === 'tr'
+                            ? (isTourActive ? 'Anlatımı Durdur' : 'Anlatımı Başlat')
+                            : (isTourActive ? 'Stop Tour' : 'Start Tour')
+                        }
+                    </span>
+                </button>
+
+                {/* Language Switcher */}
+                <button
+                    onClick={toggleLanguage}
+                    className="bg-white/90 backdrop-blur-md text-black px-4 py-2 rounded-full shadow-lg font-bold text-xs flex items-center gap-3 hover:bg-white transition-all border border-black/10"
+                >
+                    <Globe size={14} />
+                    <div className="flex items-center gap-2">
+                        <span className={language === 'tr' ? 'text-black' : 'text-stone-400 font-medium'}>TR</span>
+                        <span className="text-stone-300">|</span>
+                        <span className={language === 'en' ? 'text-black' : 'text-stone-400 font-medium'}>EN</span>
+                    </div>
+                </button>
+            </div>
 
             {/* Bottom Map Section */}
             <section className="flex-1 relative w-full overflow-hidden">
@@ -105,6 +232,8 @@ function AtaturkMapContent() {
                     event={selectedEvent}
                     showInfo={showInfo}
                     onToggle={() => setShowInfo(!showInfo)}
+                    isSpeaking={isSpeaking}
+                    onToggleSpeech={toggleSpeech}
                 />
 
                 <EventTimeline
