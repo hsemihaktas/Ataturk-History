@@ -44,7 +44,7 @@ export default function SearchOverlay({ isOpen, onClose, events, onSelectEvent }
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-[3000] bg-zinc-950/80 backdrop-blur-md flex flex-col animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-[5000] bg-zinc-950/80 backdrop-blur-md flex flex-col animate-in fade-in duration-200">
             {/* Header */}
             <div className="p-4 md:p-6 flex items-center gap-4 border-b border-white/10">
                 <div className="flex-1 relative">

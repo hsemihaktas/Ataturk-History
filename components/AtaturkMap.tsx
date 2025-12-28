@@ -99,6 +99,11 @@ function AtaturkMapContent() {
         if (isTourActive) {
             stopTour();
         }
+
+        // Update Document Title
+        if (document) {
+            document.title = language === 'tr' ? 'Atatürk Kronolojisi' : 'Atatürk Chronology';
+        }
     }, [language]);
 
     // Handle manual event select

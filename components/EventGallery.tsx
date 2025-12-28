@@ -2,17 +2,22 @@
 
 import { History } from 'lucide-react';
 import { HistoricalEvent } from '@/lib/types';
+import { useLanguage } from '@/lib/context/LanguageContext';
 
 interface EventGalleryProps {
     event: HistoricalEvent;
 }
 
 export default function EventGallery({ event }: EventGalleryProps) {
+    const { language } = useLanguage();
+
     return (
         <section className="h-[28%] md:h-[45%] min-h-[200px] md:min-h-[350px] w-full bg-[#0a0a0a] flex flex-col justify-start md:justify-center items-center px-4 py-4 md:py-8 overflow-hidden relative border-b border-white/5">
             <div className="absolute top-4 md:top-6 left-4 md:left-8 flex items-center gap-2 md:gap-3 z-20">
                 <History className="text-red-600 w-5 h-5 md:w-6 md:h-6" />
-                <h1 className="text-white font-bold text-sm md:text-lg tracking-wider font-serif uppercase">Gazi Mustafa Kemal Atatürk Arşivi</h1>
+                <h1 className="text-white font-bold text-sm md:text-lg tracking-wider font-serif uppercase">
+                    {language === 'tr' ? 'Gazi Mustafa Kemal Atatürk Arşivi' : 'Gazi Mustafa Kemal Atatürk Archive'}
+                </h1>
             </div>
 
             <div className="flex gap-6 md:gap-16 items-start justify-start md:justify-center w-full max-w-7xl overflow-x-auto custom-scrollbar pt-10 md:pt-12 pb-2 md:pb-4 px-4 md:px-10 no-scrollbar md:scrollbar-auto">
@@ -37,7 +42,9 @@ export default function EventGallery({ event }: EventGalleryProps) {
                         </div>
                     </div>
                 )) || (
-                        <div className="text-zinc-600 text-xs md:text-sm font-light italic">Görsel bulunmamaktadır.</div>
+                        <div className="text-zinc-600 text-xs md:text-sm font-light italic">
+                            {language === 'tr' ? 'Görsel bulunmamaktadır.' : 'No visuals available.'}
+                        </div>
                     )}
             </div>
         </section>
