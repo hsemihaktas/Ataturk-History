@@ -38,7 +38,7 @@ export default function EventInfoCard({ event, showInfo, onToggle, isSpeaking, o
         
         /* Desktop: Floating Card (Always Visible on Left) */
         md:translate-y-0 md:top-6 md:left-6 md:right-auto md:bottom-auto
-        md:w-80 lg:w-[22rem] md:max-h-none
+        md:w-[32rem] lg:w-[36rem] md:max-h-none
         ${!showInfo ? 'translate-y-[120%] md:translate-y-0 md:opacity-100' : 'translate-y-0'}
       `}>
                 <div className={`
