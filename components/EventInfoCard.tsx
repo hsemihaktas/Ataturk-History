@@ -1,6 +1,5 @@
-'use client';
-
-import { MapPin, ExternalLink, Info } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { MapPin, ExternalLink, Info, Volume2, Square } from 'lucide-react';
 import { HistoricalEvent } from '@/lib/types';
 import { CATEGORY_COLORS, CATEGORY_LABELS } from '@/lib/data/config';
 
@@ -11,6 +10,61 @@ interface EventInfoCardProps {
 }
 
 export default function EventInfoCard({ event, showInfo, onToggle }: EventInfoCardProps) {
+    const [isSpeaking, setIsSpeaking] = useState(false);
+    const [voice, setVoice] = useState<SpeechSynthesisVoice | null>(null);
+
+    useEffect(() => {
+        const loadVoices = () => {
+            const voices = window.speechSynthesis.getVoices();
+            // Filter for Turkish voices
+            const trVoices = voices.filter(v => v.lang.includes('tr'));
+
+            if (trVoices.length > 0) {
+                // Priority list for better sounding voices
+                const preferredVoice = trVoices.find(v =>
+                    v.name.includes('Google') ||
+                    v.name.includes('Yelda') ||
+                    v.name.includes('Siri') ||
+                    v.name.includes('Natural')
+                );
+
+                setVoice(preferredVoice || trVoices[0]);
+            }
+        };
+
+        loadVoices();
+
+        // Chrome loads voices asynchronously
+        if (window.speechSynthesis.onvoiceschanged !== undefined) {
+            window.speechSynthesis.onvoiceschanged = loadVoices;
+        }
+
+        // Cancel speech when event changes or component unmounts
+        window.speechSynthesis.cancel();
+        setIsSpeaking(false);
+        return () => {
+            window.speechSynthesis.cancel();
+        };
+    }, [event.id]);
+
+    const handleSpeak = () => {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            setIsSpeaking(false);
+        } else {
+            const utterance = new SpeechSynthesisUtterance(event.description);
+            utterance.lang = 'tr-TR';
+            if (voice) {
+                utterance.voice = voice;
+            }
+            // Slightly slower rate for better clarity if it's a fast voice, 
+            // but default 1 is usually fine. Let's keep it natural.
+            utterance.onend = () => setIsSpeaking(false);
+            window.speechSynthesis.speak(utterance);
+            setIsSpeaking(true);
+        }
+    };
+
     return (
         <>
             {/* Info Toggle Button (Mobile) */}
@@ -34,7 +88,16 @@ export default function EventInfoCard({ event, showInfo, onToggle }: EventInfoCa
                             <span className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full ${CATEGORY_COLORS[event.category as keyof typeof CATEGORY_COLORS]}`} />
                             <span className="text-[9px] md:text-[10px] font-bold text-zinc-400 uppercase tracking-widest">{CATEGORY_LABELS[event.category as keyof typeof CATEGORY_LABELS]}</span>
                         </div>
-                        <button className="md:hidden text-zinc-400" onClick={onToggle}>✕</button>
+                        <div className="flex items-center gap-2">
+                            <button
+                                onClick={handleSpeak}
+                                className="w-8 h-8 flex items-center justify-center rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-600 transition-colors"
+                                title="Sesli Anlatım"
+                            >
+                                {isSpeaking ? <Square size={14} className="fill-current" /> : <Volume2 size={16} />}
+                            </button>
+                            <button className="md:hidden text-zinc-400" onClick={onToggle}>✕</button>
+                        </div>
                     </div>
 
                     <h2 className="text-lg md:text-2xl font-bold text-zinc-900 mb-2 md:mb-3 leading-tight">{event.title}</h2>
