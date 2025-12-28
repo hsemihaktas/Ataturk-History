@@ -38,7 +38,7 @@ export default function EventInfoCard({ event, showInfo, onToggle, isSpeaking, o
         
         /* Desktop: Floating Card (Always Visible on Left) */
         md:translate-y-0 md:top-6 md:left-6 md:right-auto md:bottom-auto
-        md:w-96 lg:w-[26rem] md:max-h-none
+        md:w-80 lg:w-[22rem] md:max-h-none
         ${!showInfo ? 'translate-y-[120%] md:translate-y-0 md:opacity-100' : 'translate-y-0'}
       `}>
                 <div className={`
@@ -84,16 +84,7 @@ export default function EventInfoCard({ event, showInfo, onToggle, isSpeaking, o
                         {event.description}
                     </p>
 
-                    {event.msbLink && (
-                        <a
-                            href={event.msbLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-2 w-full py-3 bg-zinc-900 text-white rounded-xl text-xs font-bold hover:bg-red-700 transition-all uppercase tracking-widest"
-                        >
-                            {language === 'tr' ? 'MSB Arşivi Detay' : 'MSB Archive Detail'} <ExternalLink size={12} className="w-3.5 h-3.5" />
-                        </a>
-                    )}
+
                 </div>
             </div>
         </>
