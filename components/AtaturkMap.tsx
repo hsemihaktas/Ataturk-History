@@ -11,8 +11,11 @@ import EventInfoCard from './EventInfoCard';
 import EventTimeline from './EventTimeline';
 import EventMarker from './EventMarker';
 import { LanguageProvider, useLanguage } from '@/lib/context/LanguageContext';
-import { Globe, Play, Square, Pause } from 'lucide-react';
+import { Globe, Play, Square, Pause, Search } from 'lucide-react';
 import { useTTS } from '@/lib/hooks/useTTS';
+import SearchOverlay from './SearchOverlay';
+import { getEventsOnThisDay } from '@/lib/utils/dateUtils';
+import OnThisDayNotification from './OnThisDayNotification';
 
 // Dynamically import MapRefocus to avoid SSR issues
 const MapRefocus = dynamic(() => import('./MapRefocus'), { ssr: false });
@@ -28,7 +31,24 @@ function AtaturkMapContent() {
     // Initialize with the first event
     const [selectedEvent, setSelectedEvent] = useState<HistoricalEvent>(currentEvents[0]);
     const [showInfo, setShowInfo] = useState(true);
-    const [mapZoom] = useState(9);
+    const [mapZoom] = useState(9); // Default zoom increased as requested
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [onThisDayEvent, setOnThisDayEvent] = useState<HistoricalEvent | null>(null);
+
+    // Check for "On This Day" events on mount
+    useEffect(() => {
+        // Always check against Turkish data for date matching source of truth, 
+        // but display the relevant language version if found.
+        const matches = getEventsOnThisDay(ATATURK_CHRONOLOGY);
+        if (matches.length > 0) {
+            // If we found a match ID, find the corresponding event in the current language
+            const matchId = matches[0].id;
+            const displayEvent = currentEvents.find(e => e.id === matchId);
+            if (displayEvent) {
+                setOnThisDayEvent(displayEvent);
+            }
+        }
+    }, [currentEvents]); // Re-run if language changes to update the displayed event text
 
     // Tour state
     const [isTourActive, setIsTourActive] = useState(false);
@@ -169,6 +189,15 @@ function AtaturkMapContent() {
 
             {/* Top Controls Container */}
             <div className="absolute top-4 right-4 z-[2000] flex items-center gap-3">
+                {/* Search Button */}
+                <button
+                    onClick={() => setIsSearchOpen(true)}
+                    className="w-9 h-9 md:w-auto md:px-4 md:py-2 bg-white/90 backdrop-blur-md text-black rounded-full shadow-lg font-bold text-xs flex items-center justify-center md:justify-start gap-2 transition-all border border-black/10 hover:bg-white"
+                >
+                    <Search size={16} />
+                    <span className="hidden md:inline">{language === 'tr' ? 'Ara' : 'Search'}</span>
+                </button>
+
                 {/* Tour Button */}
                 <button
                     onClick={toggleTour}
@@ -241,6 +270,24 @@ function AtaturkMapContent() {
                     selectedEvent={selectedEvent}
                     onEventSelect={handleEventSelect}
                 />
+
+                <SearchOverlay
+                    isOpen={isSearchOpen}
+                    onClose={() => setIsSearchOpen(false)}
+                    events={currentEvents}
+                    onSelectEvent={(event) => {
+                        handleEventSelect(event);
+                        setIsSearchOpen(false);
+                    }}
+                />
+
+                {onThisDayEvent && (
+                    <OnThisDayNotification
+                        event={onThisDayEvent}
+                        onSelect={handleEventSelect}
+                        onClose={() => setOnThisDayEvent(null)}
+                    />
+                )}
             </section>
         </div>
     );
