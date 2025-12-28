@@ -22,11 +22,11 @@ export default function EventGallery({ event }: EventGalleryProps) {
                         className="flex flex-col items-center min-w-[130px] md:min-w-[180px] max-w-[200px] md:max-w-[280px] group animate-in fade-in zoom-in-95 duration-700 fill-mode-both"
                         style={{ animationDelay: `${idx * 150}ms` }}
                     >
-                        <div className="w-28 h-40 md:w-48 md:h-64 bg-zinc-900 rounded-sm overflow-hidden shadow-2xl transition-all duration-500 group-hover:scale-105 border border-white/5">
+                        <div className="w-28 h-40 md:w-48 md:h-64 bg-black/40 rounded-sm overflow-hidden shadow-2xl transition-all duration-500 group-hover:scale-105 border border-white/10 flex items-center justify-center">
                             <img
                                 src={asset.url}
                                 alt={asset.label}
-                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-700"
                                 loading="lazy"
                             />
                         </div>
