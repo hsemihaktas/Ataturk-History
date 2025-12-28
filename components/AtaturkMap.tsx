@@ -188,13 +188,13 @@ function AtaturkMapContent() {
             <EventGallery event={selectedEvent} />
 
             {/* Top Controls Container */}
-            <div className="absolute top-4 right-4 z-[2000] flex items-center gap-3">
+            <div className="absolute top-4 right-4 z-[2000] flex flex-col md:flex-row items-end md:items-center gap-2 md:gap-3">
                 {/* Search Button */}
                 <button
                     onClick={() => setIsSearchOpen(true)}
-                    className="w-9 h-9 md:w-auto md:px-4 md:py-2 bg-white/90 backdrop-blur-md text-black rounded-full shadow-lg font-bold text-xs flex items-center justify-center md:justify-start gap-2 transition-all border border-black/10 hover:bg-white"
+                    className="w-10 h-10 md:w-auto md:px-4 md:py-2 bg-white/90 backdrop-blur-md text-black rounded-full shadow-lg font-bold text-xs flex items-center justify-center gap-2 transition-all border border-black/10 hover:bg-white"
                 >
-                    <Search size={16} />
+                    <Search size={18} className="md:w-4 md:h-4" />
                     <span className="hidden md:inline">{language === 'tr' ? 'Ara' : 'Search'}</span>
                 </button>
 
@@ -202,15 +202,18 @@ function AtaturkMapContent() {
                 <button
                     onClick={toggleTour}
                     className={`
-                        px-4 py-2 rounded-full shadow-lg font-bold text-xs flex items-center gap-2 transition-all border border-black/10
+                        w-10 h-10 md:w-auto md:px-4 md:py-2 rounded-full shadow-lg font-bold text-xs flex items-center justify-center gap-2 transition-all border border-black/10
                         ${isTourActive
                             ? 'bg-red-600 text-white hover:bg-red-700'
                             : 'bg-white/90 backdrop-blur-md text-black hover:bg-white'
                         }
                     `}
                 >
-                    {isTourActive ? <Pause size={14} className="fill-current" /> : <Play size={14} className="fill-current" />}
-                    <span>
+                    {isTourActive
+                        ? <Pause size={18} className="fill-current md:w-3.5 md:h-3.5" />
+                        : <Play size={18} className="fill-current md:w-3.5 md:h-3.5" />
+                    }
+                    <span className="hidden md:inline">
                         {language === 'tr'
                             ? (isTourActive ? 'Anlatımı Durdur' : 'Anlatımı Başlat')
                             : (isTourActive ? 'Stop Tour' : 'Start Tour')
@@ -221,10 +224,10 @@ function AtaturkMapContent() {
                 {/* Language Switcher */}
                 <button
                     onClick={toggleLanguage}
-                    className="bg-white/90 backdrop-blur-md text-black px-4 py-2 rounded-full shadow-lg font-bold text-xs flex items-center gap-3 hover:bg-white transition-all border border-black/10"
+                    className="h-10 px-3 md:px-4 bg-white/90 backdrop-blur-md text-black rounded-full shadow-lg font-bold text-xs flex items-center gap-2 md:gap-3 hover:bg-white transition-all border border-black/10"
                 >
-                    <Globe size={14} />
-                    <div className="flex items-center gap-2">
+                    <Globe size={16} className="md:w-3.5 md:h-3.5" />
+                    <div className="flex items-center gap-1.5 md:gap-2">
                         <span className={language === 'tr' ? 'text-black' : 'text-stone-400 font-medium'}>TR</span>
                         <span className="text-stone-300">|</span>
                         <span className={language === 'en' ? 'text-black' : 'text-stone-400 font-medium'}>EN</span>

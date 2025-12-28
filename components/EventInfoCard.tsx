@@ -27,18 +27,35 @@ export default function EventInfoCard({ event, showInfo, onToggle, isSpeaking, o
                 <Info size={20} />
             </button>
 
-            {/* Info Card Overlay - Responsive Layout */}
+            {/* Info Card Overlay - Responsive Layout (Bottom Sheet on Mobile) */}
             <div className={`
-        absolute z-[1000] transition-all duration-500 ease-in-out
-        ${showInfo ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0 pointer-events-none md:pointer-events-auto'}
-        top-4 md:top-6 right-4 md:right-6 left-4 md:left-auto
-        md:w-80 lg:w-96
+        absolute z-[3000] transition-all duration-500 ease-in-out
+        
+        /* Mobile: Bottom Sheet */
+        ${showInfo ? 'translate-y-0' : 'translate-y-[120%]'}
+        bottom-0 left-0 right-0 w-full px-0 pb-0
+        height-auto max-h-[85vh]
+        
+        /* Desktop: Floating Card */
+        md:translate-y-0 md:top-6 md:right-6 md:left-auto md:bottom-auto
+        md:w-80 lg:w-96 md:max-h-none
+        ${!showInfo && 'md:opacity-0 md:pointer-events-none md:translate-y-4'}
       `}>
-                <div className="bg-white/95 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-6 shadow-2xl border border-white/20 pointer-events-auto">
-                    <div className="flex items-center justify-between mb-2 md:mb-4">
+                <div className={`
+                    bg-white shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.3)] border-t border-zinc-200
+                    rounded-t-[2rem] md:rounded-2xl md:border-none
+                    p-6 md:p-6
+                    pointer-events-auto
+                    w-full h-full flex flex-col
+                    md:bg-white/95 md:backdrop-blur-md md:shadow-2xl md:border md:border-white/20
+                `}>
+                    <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-2">
+                            {/* Drag Handle for Mobile */}
+                            <div className="md:hidden absolute top-3 left-1/2 -translate-x-1/2 w-12 h-1.5 bg-zinc-200 rounded-full" />
+
                             <span className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full ${CATEGORY_COLORS[event.category as keyof typeof CATEGORY_COLORS]}`} />
-                            <span className="text-[9px] md:text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
+                            <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
                                 {categoryLabels[event.category as keyof typeof CATEGORY_LABELS]}
                             </span>
                         </div>
@@ -50,17 +67,17 @@ export default function EventInfoCard({ event, showInfo, onToggle, isSpeaking, o
                             >
                                 {isSpeaking ? <Square size={14} className="fill-current" /> : <Volume2 size={16} />}
                             </button>
-                            <button className="md:hidden text-zinc-400" onClick={onToggle}>✕</button>
+                            <button className="md:hidden w-8 h-8 flex items-center justify-center rounded-full bg-zinc-50 text-zinc-400" onClick={onToggle}>✕</button>
                         </div>
                     </div>
 
-                    <h2 className="text-lg md:text-2xl font-bold text-zinc-900 mb-2 md:mb-3 leading-tight">{event.title}</h2>
+                    <h2 className="text-xl md:text-2xl font-bold text-zinc-900 mb-2 leading-tight">{event.title}</h2>
 
-                    <div className="flex items-center gap-1 text-[10px] md:text-xs text-red-600 font-bold mb-3 md:mb-4">
-                        <MapPin size={12} className="md:w-3.5 md:h-3.5" /> {event.location} <span className="text-zinc-300 mx-1">|</span> {event.date}
+                    <div className="flex items-center gap-1 text-xs text-red-600 font-bold mb-4">
+                        <MapPin size={12} className="w-3.5 h-3.5" /> {event.location} <span className="text-zinc-300 mx-1">|</span> {event.date}
                     </div>
 
-                    <p className="text-zinc-600 text-xs md:text-sm leading-relaxed mb-4 md:mb-6 font-medium line-clamp-4 md:line-clamp-none">
+                    <p className="text-zinc-600 text-sm leading-relaxed mb-6 font-medium line-clamp-6 md:line-clamp-none">
                         {event.description}
                     </p>
 
@@ -69,9 +86,9 @@ export default function EventInfoCard({ event, showInfo, onToggle, isSpeaking, o
                             href={event.msbLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-2 w-full py-2.5 md:py-3 bg-zinc-900 text-white rounded-lg md:rounded-xl text-[10px] md:text-xs font-bold hover:bg-red-700 transition-all uppercase tracking-widest"
+                            className="flex items-center justify-center gap-2 w-full py-3 bg-zinc-900 text-white rounded-xl text-xs font-bold hover:bg-red-700 transition-all uppercase tracking-widest"
                         >
-                            {language === 'tr' ? 'MSB Arşivi Detay' : 'MSB Archive Detail'} <ExternalLink size={12} className="md:w-3.5 md:h-3.5" />
+                            {language === 'tr' ? 'MSB Arşivi Detay' : 'MSB Archive Detail'} <ExternalLink size={12} className="w-3.5 h-3.5" />
                         </a>
                     )}
                 </div>
