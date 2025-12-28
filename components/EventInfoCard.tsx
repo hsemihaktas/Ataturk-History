@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { MapPin, ExternalLink, Info, Volume2, Square } from 'lucide-react';
 import { HistoricalEvent } from '@/lib/types';
-import { CATEGORY_COLORS, CATEGORY_LABELS } from '@/lib/data/config';
+import { CATEGORY_COLORS, CATEGORY_LABELS, CATEGORY_LABELS_EN } from '@/lib/data/config';
+import { useLanguage } from '@/lib/context/LanguageContext';
 
 interface EventInfoCardProps {
     event: HistoricalEvent;
@@ -10,42 +11,57 @@ interface EventInfoCardProps {
 }
 
 export default function EventInfoCard({ event, showInfo, onToggle }: EventInfoCardProps) {
+    const { language } = useLanguage();
     const [isSpeaking, setIsSpeaking] = useState(false);
     const [voice, setVoice] = useState<SpeechSynthesisVoice | null>(null);
+
+    // Get correct category labels based on language
+    const categoryLabels = language === 'tr' ? CATEGORY_LABELS : CATEGORY_LABELS_EN;
 
     useEffect(() => {
         const loadVoices = () => {
             const voices = window.speechSynthesis.getVoices();
-            // Filter for Turkish voices
-            const trVoices = voices.filter(v => v.lang.includes('tr'));
 
-            if (trVoices.length > 0) {
-                // Priority list for better sounding voices
-                const preferredVoice = trVoices.find(v =>
-                    v.name.includes('Google') ||
-                    v.name.includes('Yelda') ||
-                    v.name.includes('Siri') ||
-                    v.name.includes('Natural')
-                );
-
-                setVoice(preferredVoice || trVoices[0]);
+            if (language === 'tr') {
+                // Filter for Turkish voices
+                const trVoices = voices.filter(v => v.lang.includes('tr'));
+                if (trVoices.length > 0) {
+                    const preferredVoice = trVoices.find(v =>
+                        v.name.includes('Google') ||
+                        v.name.includes('Yelda') ||
+                        v.name.includes('Siri') ||
+                        v.name.includes('Natural')
+                    );
+                    setVoice(preferredVoice || trVoices[0]);
+                }
+            } else {
+                // Filter for English voices
+                const enVoices = voices.filter(v => v.lang.includes('en'));
+                if (enVoices.length > 0) {
+                    // Prefer natural sounding English voices
+                    const preferredVoice = enVoices.find(v =>
+                        v.name.includes('Google US') ||
+                        v.name.includes('Samantha') ||
+                        v.name.includes('Arthur') ||
+                        v.name.includes('Natural')
+                    );
+                    setVoice(preferredVoice || enVoices[0]);
+                }
             }
         };
 
         loadVoices();
 
-        // Chrome loads voices asynchronously
         if (window.speechSynthesis.onvoiceschanged !== undefined) {
             window.speechSynthesis.onvoiceschanged = loadVoices;
         }
 
-        // Cancel speech when event changes or component unmounts
         window.speechSynthesis.cancel();
         setIsSpeaking(false);
         return () => {
             window.speechSynthesis.cancel();
         };
-    }, [event.id]);
+    }, [event.id, language]);
 
     const handleSpeak = () => {
         if (isSpeaking) {
@@ -53,12 +69,10 @@ export default function EventInfoCard({ event, showInfo, onToggle }: EventInfoCa
             setIsSpeaking(false);
         } else {
             const utterance = new SpeechSynthesisUtterance(event.description);
-            utterance.lang = 'tr-TR';
+            utterance.lang = language === 'tr' ? 'tr-TR' : 'en-US';
             if (voice) {
                 utterance.voice = voice;
             }
-            // Slightly slower rate for better clarity if it's a fast voice, 
-            // but default 1 is usually fine. Let's keep it natural.
             utterance.onend = () => setIsSpeaking(false);
             window.speechSynthesis.speak(utterance);
             setIsSpeaking(true);
@@ -86,13 +100,15 @@ export default function EventInfoCard({ event, showInfo, onToggle }: EventInfoCa
                     <div className="flex items-center justify-between mb-2 md:mb-4">
                         <div className="flex items-center gap-2">
                             <span className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full ${CATEGORY_COLORS[event.category as keyof typeof CATEGORY_COLORS]}`} />
-                            <span className="text-[9px] md:text-[10px] font-bold text-zinc-400 uppercase tracking-widest">{CATEGORY_LABELS[event.category as keyof typeof CATEGORY_LABELS]}</span>
+                            <span className="text-[9px] md:text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
+                                {categoryLabels[event.category as keyof typeof CATEGORY_LABELS]}
+                            </span>
                         </div>
                         <div className="flex items-center gap-2">
                             <button
                                 onClick={handleSpeak}
                                 className="w-8 h-8 flex items-center justify-center rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-600 transition-colors"
-                                title="Sesli Anlatım"
+                                title={language === 'tr' ? "Sesli Anlatım" : "Read Aloud"}
                             >
                                 {isSpeaking ? <Square size={14} className="fill-current" /> : <Volume2 size={16} />}
                             </button>
@@ -117,7 +133,7 @@ export default function EventInfoCard({ event, showInfo, onToggle }: EventInfoCa
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-2 w-full py-2.5 md:py-3 bg-zinc-900 text-white rounded-lg md:rounded-xl text-[10px] md:text-xs font-bold hover:bg-red-700 transition-all uppercase tracking-widest"
                         >
-                            MSB Arşivi Detay <ExternalLink size={12} className="md:w-3.5 md:h-3.5" />
+                            {language === 'tr' ? 'MSB Arşivi Detay' : 'MSB Archive Detail'} <ExternalLink size={12} className="md:w-3.5 md:h-3.5" />
                         </a>
                     )}
                 </div>

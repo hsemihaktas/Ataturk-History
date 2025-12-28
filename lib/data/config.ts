@@ -13,3 +13,11 @@ export const CATEGORY_LABELS = {
     reform: 'İnkılaplar',
     education: 'Eğitim Hayatı',
 } as const;
+
+export const CATEGORY_LABELS_EN = {
+    military: 'Military Achievements',
+    political: 'Political Steps',
+    personal: 'Personal Life',
+    reform: 'Reforms',
+    education: 'Education',
+} as const;
