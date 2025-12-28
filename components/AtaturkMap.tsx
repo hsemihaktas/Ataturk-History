@@ -187,56 +187,65 @@ function AtaturkMapContent() {
             {/* Top Gallery Section - Dynamic Height */}
             <EventGallery event={selectedEvent} />
 
-            {/* Top Controls Container */}
-            <div className="absolute top-4 right-4 z-[2000] flex flex-col md:flex-row items-end md:items-center gap-2 md:gap-3">
-                {/* Search Button */}
-                <button
-                    onClick={() => setIsSearchOpen(true)}
-                    className="w-10 h-10 md:w-auto md:px-4 md:py-2 bg-white/90 backdrop-blur-md text-black rounded-full shadow-lg font-bold text-xs flex items-center justify-center gap-2 transition-all border border-black/10 hover:bg-white"
-                >
-                    <Search size={18} className="md:w-4 md:h-4" />
-                    <span className="hidden md:inline">{language === 'tr' ? 'Ara' : 'Search'}</span>
-                </button>
-
-                {/* Tour Button */}
-                <button
-                    onClick={toggleTour}
-                    className={`
-                        w-10 h-10 md:w-auto md:px-4 md:py-2 rounded-full shadow-lg font-bold text-xs flex items-center justify-center gap-2 transition-all border border-black/10
-                        ${isTourActive
-                            ? 'bg-red-600 text-white hover:bg-red-700'
-                            : 'bg-white/90 backdrop-blur-md text-black hover:bg-white'
-                        }
-                    `}
-                >
-                    {isTourActive
-                        ? <Pause size={18} className="fill-current md:w-3.5 md:h-3.5" />
-                        : <Play size={18} className="fill-current md:w-3.5 md:h-3.5" />
-                    }
-                    <span className="hidden md:inline">
-                        {language === 'tr'
-                            ? (isTourActive ? 'Anlatımı Durdur' : 'Anlatımı Başlat')
-                            : (isTourActive ? 'Stop Tour' : 'Start Tour')
-                        }
-                    </span>
-                </button>
-
-                {/* Language Switcher */}
-                <button
-                    onClick={toggleLanguage}
-                    className="h-10 px-3 md:px-4 bg-white/90 backdrop-blur-md text-black rounded-full shadow-lg font-bold text-xs flex items-center gap-2 md:gap-3 hover:bg-white transition-all border border-black/10"
-                >
-                    <Globe size={16} className="md:w-3.5 md:h-3.5" />
-                    <div className="flex items-center gap-1.5 md:gap-2">
-                        <span className={language === 'tr' ? 'text-black' : 'text-stone-400 font-medium'}>TR</span>
-                        <span className="text-stone-300">|</span>
-                        <span className={language === 'en' ? 'text-black' : 'text-stone-400 font-medium'}>EN</span>
-                    </div>
-                </button>
-            </div>
-
             {/* Bottom Map Section */}
             <section className="flex-1 relative w-full overflow-hidden">
+                {/* Map Controls - Positioned absolute on the map */}
+                <div className="absolute top-4 right-4 z-[2000] flex flex-col gap-3">
+                    {/* Search Button */}
+                    <button
+                        onClick={() => setIsSearchOpen(true)}
+                        className="w-10 h-10 md:w-auto md:h-10 md:px-4 bg-white/90 backdrop-blur-md text-black rounded-full shadow-lg font-bold text-xs flex items-center justify-center gap-2 transition-all border border-black/10 hover:bg-white border-white/20"
+                        title={language === 'tr' ? 'Ara' : 'Search'}
+                    >
+                        <Search size={18} className="md:w-4 md:h-4 text-zinc-800" />
+                        <span className="hidden md:inline">{language === 'tr' ? 'Ara' : 'Search'}</span>
+                    </button>
+
+                    {/* Tour Button */}
+                    <button
+                        onClick={toggleTour}
+                        className={`
+                            w-10 h-10 md:w-auto md:h-10 md:px-4 rounded-full shadow-lg font-bold text-xs flex items-center justify-center gap-2 transition-all border
+                            ${isTourActive
+                                ? 'bg-red-600 text-white border-red-700 hover:bg-red-700'
+                                : 'bg-white/90 backdrop-blur-md text-black border-black/10 hover:bg-white'
+                            }
+                        `}
+                        title={language === 'tr' ? 'Anlatımı Başlat/Durdur' : 'Start/Stop Tour'}
+                    >
+                        {isTourActive
+                            ? <Pause size={18} className="fill-current md:w-3.5 md:h-3.5" />
+                            : <Play size={18} className="fill-current md:w-3.5 md:h-3.5 ml-0.5" />
+                        }
+                        <span className="hidden md:inline">
+                            {language === 'tr'
+                                ? (isTourActive ? 'Durdur' : 'Anlat')
+                                : (isTourActive ? 'Stop' : 'Start')
+                            }
+                        </span>
+                    </button>
+
+                    {/* Language Switcher */}
+                    <button
+                        onClick={toggleLanguage}
+                        className="w-10 h-10 md:w-auto md:h-10 md:px-4 bg-white/90 backdrop-blur-md text-black rounded-full shadow-lg font-bold text-xs flex items-center justify-center gap-2 hover:bg-white transition-all border border-black/10"
+                        title="Change Language"
+                    >
+                        <Globe size={18} className="hidden md:block md:w-3.5 md:h-3.5 md:text-zinc-600" />
+
+                        {/* Mobile: Show Current Lang Code */}
+                        <span className="md:hidden font-black text-xs">
+                            {language.toUpperCase()}
+                        </span>
+
+                        {/* Desktop: Full Switcher */}
+                        <div className="hidden md:flex items-center gap-2">
+                            <span className={language === 'tr' ? 'text-black' : 'text-stone-400 font-medium'}>TR</span>
+                            <span className="text-stone-300">|</span>
+                            <span className={language === 'en' ? 'text-black' : 'text-stone-400 font-medium'}>EN</span>
+                        </div>
+                    </button>
+                </div>
                 <MapContainer
                     center={initialCenter as [number, number]}
                     zoom={mapZoom}

@@ -44,7 +44,7 @@ export default function EventInfoCard({ event, showInfo, onToggle, isSpeaking, o
                 <div className={`
                     bg-white shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.3)] border-t border-zinc-200
                     rounded-t-[2rem] md:rounded-2xl md:border-none
-                    p-6 md:p-6
+                    p-6 pb-24 md:p-6
                     pointer-events-auto
                     w-full h-full flex flex-col
                     md:bg-white/95 md:backdrop-blur-md md:shadow-2xl md:border md:border-white/20

@@ -35,7 +35,7 @@ export default function EventTimeline({ events, selectedEvent, onEventSelect }: 
     };
 
     return (
-        <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-[1000] flex items-center gap-2 md:gap-3 w-full justify-center px-4">
+        <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-[4000] flex items-center gap-2 md:gap-3 w-full justify-center px-4">
             <button
                 onClick={handlePrev}
                 disabled={events[0].id === selectedEvent.id}
