@@ -31,7 +31,17 @@ export default function MapRefocus({ event, zoom }: MapRefocusProps) {
             const startZoom = map.getZoom();
             const overviewZoom = 5;
 
-            // Helper to check if we should proceed
+            // Helper to determine target center (with mobile offset)
+            const getTargetCoords = (): [number, number] => {
+                if (typeof window !== 'undefined' && window.innerWidth < 768) {
+                    // Offset map center South (subtract lat) so target appears North (Higher up)
+                    // Increased to 0.20 based on user feedback to clear the sheet more aggressively
+                    return [event.coordinates[0] - 0.20, event.coordinates[1]];
+                }
+                return event.coordinates;
+            };
+
+            const finalCoords = getTargetCoords();
             const shouldProceed = () => latestEventId.current === targetId;
 
             // Step 1: Zoom Out (if needed)
@@ -41,23 +51,23 @@ export default function MapRefocus({ event, zoom }: MapRefocusProps) {
                 map.once('moveend', () => {
                     if (!shouldProceed()) return;
 
-                    // Step 2: Pan to Target
-                    map.flyTo(event.coordinates, overviewZoom, { duration: 1.0 });
+                    // Step 2: Pan to Target (using offset coords for smoothness)
+                    map.flyTo(finalCoords, overviewZoom, { duration: 1.0 });
 
                     map.once('moveend', () => {
                         if (!shouldProceed()) return;
 
                         // Step 3: Zoom In
-                        map.flyTo(event.coordinates, zoom, { duration: 0.8 });
+                        map.flyTo(finalCoords, zoom, { duration: 0.8 });
                     });
                 });
             } else {
                 // We are already zoomed out, just pan then zoom in
-                map.flyTo(event.coordinates, overviewZoom, { duration: 1.0 });
+                map.flyTo(finalCoords, overviewZoom, { duration: 1.0 });
 
                 map.once('moveend', () => {
                     if (!shouldProceed()) return;
-                    map.flyTo(event.coordinates, zoom, { duration: 0.8 });
+                    map.flyTo(finalCoords, zoom, { duration: 0.8 });
                 });
             }
 

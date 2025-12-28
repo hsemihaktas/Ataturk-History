@@ -36,18 +36,21 @@ export default function EventInfoCard({ event, showInfo, onToggle, isSpeaking, o
         bottom-0 left-0 right-0 w-full px-0 pb-0
         height-auto max-h-[85vh]
         
-        /* Desktop: Floating Card */
-        md:translate-y-0 md:top-6 md:right-6 md:left-auto md:bottom-auto
-        md:w-80 lg:w-96 md:max-h-none
-        ${!showInfo && 'md:opacity-0 md:pointer-events-none md:translate-y-4'}
+        /* Desktop: Floating Card (Always Visible on Left) */
+        md:translate-y-0 md:top-6 md:left-6 md:right-auto md:bottom-auto
+        md:w-96 lg:w-[26rem] md:max-h-none
+        ${!showInfo ? 'translate-y-[120%] md:translate-y-0 md:opacity-100' : 'translate-y-0'}
       `}>
                 <div className={`
+                    /* Base (Mobile) */
                     bg-white shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.3)] border-t border-zinc-200
-                    rounded-t-[2rem] md:rounded-2xl md:border-none
-                    p-6 pb-24 md:p-6
+                    rounded-t-[2rem] p-6 pb-24
                     pointer-events-auto
-                    w-full h-full flex flex-col
-                    md:bg-white/95 md:backdrop-blur-md md:shadow-2xl md:border md:border-white/20
+                    
+                    /* Desktop Overrides */
+                    md:bg-white/95 md:backdrop-blur-md md:shadow-2xl md:border md:border-white/20 md:border-t
+                    md:rounded-2xl md:p-6 md:pb-6
+                    md:h-auto md:block
                 `}>
                     <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-2">

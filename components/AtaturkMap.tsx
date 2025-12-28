@@ -113,7 +113,7 @@ function AtaturkMapContent() {
         setSelectedEvent(evt);
         cancel();
 
-        if (typeof window !== 'undefined' && window.innerWidth < 768) {
+        if (typeof window !== 'undefined') {
             setShowInfo(true);
         }
     };
@@ -247,6 +247,7 @@ function AtaturkMapContent() {
                     </button>
                 </div>
                 <MapContainer
+                    key={`map-${language}`}
                     center={initialCenter as [number, number]}
                     zoom={mapZoom}
                     className="w-full h-full"
@@ -265,6 +266,7 @@ function AtaturkMapContent() {
                             key={event.id}
                             event={event}
                             onSelect={handleEventSelect}
+                            isSelected={selectedEvent.id === event.id}
                         />
                     ))}
                 </MapContainer>
