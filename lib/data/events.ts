@@ -13,7 +13,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         msbLink: 'https://ata.msb.gov.tr/Genel/icerik/ataturkun-hayati',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Atatürk_House_Museum_%28Thessaloniki%29.jpg',
+                url: 'https://ata.msb.gov.tr/Upload/Images/ataturkun_ailesi/00image24720202.jpg',
                 label: 'Doğduğu Pembe Ev'
             },
             {
@@ -31,12 +31,6 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         coordinates: [40.6401, 22.9444],
         description: 'Küçük yaşta askerlik mesleğine duyduğu ilgiyle, annesinden gizli olarak girdiği sınavı kazanarak Selanik Askeri Rüştiyesi\'ne kaydoldu. Burada matematik dersindeki üstün yeteneği ve olgun kişiliğiyle dikkat çekti. Matematik öğretmeni Yüzbaşı Mustafa Efendi, "Senin de adın Mustafa, benim de. Arada bir fark olsun" diyerek kendisine "bilgi ve erdem bakımından olgunluk" anlamına gelen "Kemal" adını verdi.',
         category: 'education',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1905.jpg',
-                label: 'Öğrencilik Yılları'
-            }
-        ]
     },
     {
         id: '3',
@@ -97,8 +91,8 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1906_Damascus.jpg',
-                label: 'Şam\'da 5. Ordu (1906)'
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Atatürk_as_a_alumni_of_Ottoman_Military_Academy,_1905.jpg',
+                label: 'Kurmay Yüzbaşı Mustafa Kemal (1905)'
             }
         ]
     },
@@ -113,8 +107,8 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1905.jpg',
-                label: 'Genç Kurmay Subay'
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1906_Damascus.jpg',
+                label: 'Şam\'da Vatan ve Hürriyet (1906)'
             }
         ]
     },
@@ -129,8 +123,8 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1906_Damascus.jpg',
-                label: 'Kolağası Mustafa Kemal'
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Kurmay_Yüzbaşı_Mustafa_Kemal_arkadaşları_ile_birlikte,_Şam,_Haziran_1907.png',
+                label: 'Kolağası Mustafa Kemal (Haziran 1907)'
             }
         ]
     },
@@ -145,8 +139,8 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_and_comrades_in_Salonika.jpg',
-                label: 'Selanik\'te Silah Arkadaşlarıyla'
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal,_Selanik,_1909.png',
+                label: 'Selanik ve İttihat Terakki Günleri'
             }
         ]
     },
@@ -161,8 +155,8 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Hareket_Ordusu_Kurmay_Baskanı_Mustafa_Kemal.jpg',
-                label: 'Hareket Ordusu Kurmay Başkanı'
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Hareket_Ordusu_-_Staff_of_the_Turkish_Action_Army,_1909.jpg',
+                label: 'Hareket Ordusu Kurmay Heyeti (1909)'
             }
         ]
     },
@@ -170,15 +164,15 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         id: '11',
         year: 1910,
         date: '1910',
-        title: 'Arnavutluk Harekâtı',
-        location: 'Arnavutluk',
-        coordinates: [41.1533, 20.1683],
-        description: 'Harbiye Nazırı Mahmud Şevket Paşa komutasındaki birliklerin Kurmay Başkanı olarak Arnavutluk\'ta çıkan isyanın bastırılmasında fiilen görev aldı. Bu harekât sırasında, zorlu coğrafi koşullarda birliklerin sevk ve idaresi konusundaki tecrübelerini pekiştirdi.',
+        title: 'Picardie Manevraları',
+        location: 'Picardie, Fransa',
+        coordinates: [49.8941, 2.2957],
+        description: 'Arnavutluk Harekâtı\'ndaki görevinden sonra, Osmanlı Ordusu\'nu temsilen Fransa\'da düzenlenen Picardie Manevraları\'na gözlemci olarak katıldı. Burada Avrupa ordularının durumunu, yeni silahları ve uçakların askeri amaçla kullanımını yerinde inceleme fırsatı buldu. Batılı meslektaşlarıyla fikir alışverişinde bulundu.',
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_Picardie_Maneuvers_2.jpg',
-                label: '1910 Picardie Manevraları (Dönem Fotoğrafı)'
+                url: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Les_Manoeuvres_de_Picardie.jpg',
+                label: 'Picardie Manevraları (1910)'
             }
         ]
     },
@@ -191,12 +185,6 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         coordinates: [41.0082, 28.9784],
         description: 'Selanik\'teki görevinden alınarak İstanbul\'da Genelkurmay Başkanlığı emrine atandı. Burada Osmanlı ordusunun modernizasyonu ve eğitimi konularında çalışmalar yaptı, askeri talimnameler çevirdi ve ordunun savaşa hazırlık durumunu analiz etti.',
         category: 'military',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1911.jpg',
-                label: 'İstanbul Genelkurmay Karargahı'
-            }
-        ]
     },
     {
         id: '13',
@@ -209,7 +197,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Bey_(1911).jpg',
+                url: 'https://isteataturk.com/gorseller/1616006839_ataturk.png',
                 label: 'Binbaşı Mustafa Kemal'
             }
         ]
@@ -225,7 +213,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1911_Tripolitania.jpg',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/3/32/Ataturk5.JPG',
                 label: 'Trablusgarp Cephesi'
             }
         ]
@@ -239,12 +227,6 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         coordinates: [32.0836, 23.9764],
         description: 'Trablusgarp\'ta yerel kuvvetlerden oluşturduğu birliklerle İtalyan ordusuna karşı Tobruk Savaşı\'nı yönetti ve büyük bir zafer kazandı. Bu başarı, onun askeri dehasının ve liderlik yeteneğinin uluslararası alanda duyulmasını sağlayan ilk büyük askeri başarısıydı.',
         category: 'military',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_and_Enver_in_Tripoli_1912.jpg',
-                label: 'Tobruk Cephesi Komutanları'
-            }
-        ]
     },
     {
         id: '16',
@@ -271,12 +253,6 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         coordinates: [42.6977, 23.3219],
         description: 'Sofya\'daki görevi başındayken Yarbaylık rütbesine yükseltildi. Birinci Dünya Savaşı\'nın başlaması üzerine, ısrarla aktif bir görev isteyerek cepheye gitmek için başvuruda bulundu.',
         category: 'military',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_Sofia_1914.jpg',
-                label: 'Sofya Askeri Ataşesi'
-            }
-        ]
     },
     {
         id: '18',
@@ -289,8 +265,8 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal,_Gallipoli.jpg',
-                label: 'Gelibolu Cephesi'
+                url: 'https://i0.wp.com/www.akademiktarihtr.com/wp-content/uploads/2019/05/foto1.jpg?resize=376%2C480&ssl=1',
+                label: '19. Tümen Komutanlığı'
             }
         ]
     },
@@ -319,12 +295,6 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         coordinates: [40.1553, 26.4142],
         description: 'Çanakkale Cephesi\'ndeki üstün başarıları, öngörüleri ve cesareti nedeniyle Albaylık rütbesine terfi etti. Bu terfi, onun ordu içindeki prestijini ve komuta ettiği birliklerin büyüklüğünü artırdı.',
         category: 'military',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Chanak_1915.jpg',
-                label: 'Anafartalar Grubu Komutanı'
-            }
-        ]
     },
     {
         id: '21',
@@ -337,7 +307,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_in_Gallipoli.jpg',
+                url: 'https://isteataturk.com/gorseller/1507921871_ataturk.png',
                 label: 'Anafartalar Kahramanı'
             }
         ]
@@ -353,8 +323,8 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_Edirne_1916.jpg',
-                label: 'Edirne Ziyareti (1916)'
+                url: 'https://upload.wikimedia.org/wikipedia/commons/3/3e/16._Kolordu_Komutan%C4%B1_Mustafa_Kemal_Pa%C5%9Fa%2C_Bitlis%2C_16_Kas%C4%B1m_1916.png',
+                label: '16. Kolordu Komutanı'
             }
         ]
     },
@@ -369,7 +339,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Pasha_1916.jpg',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/0/00/Mirliva_Mustafa_Kemal_Pa%C5%9Fa.jpg',
                 label: 'Mirliva Mustafa Kemal Paşa'
             }
         ]
@@ -401,8 +371,8 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/General_Mustafa_Kemal_in_Aleppo,_1917.jpg',
-                label: 'Halep\'te General Mustafa Kemal'
+                url: 'https://isteataturk.com/gorseller/1571766931_ataturk.jpg',
+                label: '7. Ordu Komutanı'
             }
         ]
     },
@@ -415,12 +385,6 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         coordinates: [41.0082, 28.9784],
         description: 'İstifasının ardından İstanbul\'a döndü. Bu dönemde Veliaht Vahdettin ile birlikte Almanya ziyaretine katıldı. Alman karargâhlarında yaptığı gözlemlerle savaşın kaybedileceğini açıkça dile getirdi.',
         category: 'military',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_and_Vahdettin_in_Germany.jpg',
-                label: 'Almanya Seyahati'
-            }
-        ]
     },
     {
         id: '27',
@@ -433,7 +397,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1918.jpg',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/9/98/AtaturkYildirim.jpg',
                 label: 'Yıldırım Orduları Komutanı'
             }
         ]
@@ -449,11 +413,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandirma_Steamboat.jpg',
-                label: 'Bandırma Vapuru'
-            },
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Samsun_1919.jpg',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/9/98/Atat%C3%BCrk%C3%BCn_Samsuna_%C3%87%C4%B1k%C4%B1%C5%9F%C4%B1.jpg',
                 label: 'Samsun\'a Çıkış'
             }
         ]
@@ -469,7 +429,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Atatürk_in_Havza_1919.jpg',
+                url: 'https://www.derintarih.com/wp-content/uploads/2019/04/bugra.ekinci.jpg',
                 label: 'Havza Günleri'
             }
         ]
@@ -485,8 +445,8 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Amasya_Genelgesi.pdf',
-                label: 'Amasya Genelgesi Belgesi'
+                url: 'https://media.cumhuriyet.com.tr/Archive//2023/6/21/2092746/kapak_222248.jpg',
+                label: 'Amasya Genelgesi'
             }
         ]
     },
@@ -499,12 +459,6 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         coordinates: [39.9043, 41.2679],
         description: 'İstanbul Hükümeti\'nin görevden alma girişimleri ve geri dön çağrıları karşısında, çok sevdiği askerlik mesleğinden ve resmi görevinden istifa etti. Artık mücadeleye "sine-i millette bir fert" olarak devam edeceğini açıkladı.',
         category: 'political',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Erzurum_1919_civilian.jpg',
-                label: 'Sivil Mustafa Kemal'
-            }
-        ]
     },
     {
         id: '32',
@@ -547,12 +501,6 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         coordinates: [39.9043, 41.2679],
         description: 'İstanbul\'da toplanacak olan son Osmanlı Mebusan Meclisi için yapılan seçimlerde Erzurum\'dan milletvekili seçildi. Ancak güvenlik gerekçesiyle İstanbul\'a gitmedi ve çalışmalarını Anadolu\'dan yürüttü.',
         category: 'political',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_Erzurum_1919.jpg',
-                label: 'Erzurum Günleri'
-            }
-        ]
     },
     {
         id: '35',
@@ -565,7 +513,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Atatürk_arrives_in_Ankara_1919.jpg',
+                url: 'https://21yyte.org/cropImages/1280x720/media/k2/items/src/86cdf30414a5176a77800e8f7783d2cd.jpg',
                 label: 'Ankara\'da Karşılama'
             }
         ]
@@ -581,7 +529,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Opening_of_the_First_Grand_National_Assembly.jpg',
+                url: 'https://www.tesud.org.tr/uploads/editor/upload/images/666.jpg',
                 label: 'Birinci Meclis'
             }
         ]
@@ -595,12 +543,6 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         coordinates: [41.0082, 28.9784],
         description: 'İstanbul\'daki Divan-ı Harp tarafından, gıyabında yargılanarak idama mahkûm edildi ve rütbelerinin sökülmesine karar verildi. Bu karar, onun mücadele azmini kırmak yerine daha da bileyecek ve milletle bağını güçlendirecekti.',
         category: 'political',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_portrait_1920s.jpg',
-                label: 'Milli Mücadele Dönemi'
-            }
-        ]
     },
     {
         id: '38',
@@ -613,7 +555,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_as_Commander_in_Chief.jpg',
+                url: 'https://isteataturk.com/gorseller/1508175553_ataturk.jpg',
                 label: 'Başkomutan Mustafa Kemal'
             }
         ]
@@ -645,7 +587,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Pasha_Marshal_Uniform.jpg',
+                url: 'https://isteataturk.com/gorseller/1509518667_ataturk.png',
                 label: 'Mareşal Üniformalı'
             }
         ]
@@ -661,8 +603,8 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_observing_the_Great_Offensive.jpg',
-                label: 'Kocatepe Gözlem'
+                url: 'https://www.istanbulbarosu.org.tr/files/haber/18182/orj/Bu%CC%88yu%CC%88kTaarruz.jpg',
+                label: 'Büyük Taarruz'
             }
         ]
     },
@@ -677,7 +619,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_in_Dumlupınar.jpg',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Greek_soldiers_at_Afyon_Karahisar%2C_1922.jpg',
                 label: 'Cephede Komuta'
             }
         ]
@@ -707,12 +649,6 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         coordinates: [39.9334, 32.8597],
         description: 'Lozan Barış Konferansı\'na İstanbul Hükümeti\'nin de çağrılması üzerine ortaya çıkan ikiliği önlemek ve milli egemenliği tam anlamıyla tesis etmek amacıyla saltanat kaldırıldı. Böylece 600 yıllık Osmanlı hanedanlık yönetimi resmen sona erdi.',
         category: 'reform',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/TBMM_1922.jpg',
-                label: 'Meclis Çalışmaları'
-            }
-        ]
     },
     {
         id: '45',
@@ -771,12 +707,6 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         coordinates: [39.9334, 32.8597],
         description: 'Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyeti\'ni siyasi bir partiye dönüştürerek Halk Fırkası\'nı kurdu. Sonradan Cumhuriyet Halk Partisi adını alacak olan bu parti, Türkiye\'nin modernleşme sürecindeki devrimlerin öncüsü oldu.',
         category: 'political',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_CHP_Kurultayi.jpg',
-                label: 'Halk Fırkası'
-            }
-        ]
     },
     {
         id: '49',
@@ -789,7 +719,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'reform',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_leaving_the_parliament.jpg',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/10th_Anniversary_Speech.jpg',
                 label: 'Cumhuriyet Bayramı'
             }
         ]
@@ -803,12 +733,6 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         coordinates: [39.9334, 32.8597],
         description: 'Laik devlet yapısının önündeki en büyük engellerden biri olan Halifelik kurumu kaldırıldı. Aynı gün Tevhid-i Tedrisat Kanunu ile eğitim birleştirildi, Şeriye ve Evkaf Vekâleti kaldırılarak din ve devlet işleri birbirinden ayrıldı.',
         category: 'reform',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1924.jpg',
-                label: 'Devrimlerin Başlangıcı'
-            }
-        ]
     },
     {
         id: '51',
@@ -819,12 +743,6 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         coordinates: [39.9334, 32.8597],
         description: 'Yeni devletin yapısını ve işleyişini belirleyen 1924 Anayasası (Teşkilat-ı Esasiye Kanunu) kabul edildi. Bu anayasa ile egemenliğin kayıtsız şartsız millete ait olduğu ilkesi pekiştirildi.',
         category: 'reform',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_and_delegates.jpg',
-                label: 'Anayasa Görüşmeleri'
-            }
-        ]
     },
     {
         id: '52',
@@ -835,12 +753,6 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         coordinates: [39.9334, 32.8597],
         description: 'Kazım Karabekir, Rauf Orbay gibi Milli Mücadele komutanları tarafından kurulan ilk muhalefet partisi Terakkiperver Cumhuriyet Fırkası faaliyete geçti. Ancak Şeyh Sait İsyanı ile bağlantılı olduğu gerekçesiyle 1925\'te kapatıldı.',
         category: 'political',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_ve_Silah_Arkadaslari.jpg',
-                label: 'Silah Arkadaşlarıyla'
-            }
-        ]
     },
     {
         id: '53',
@@ -867,12 +779,6 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         coordinates: [39.9334, 32.8597],
         description: 'Batı dünyasıyla uyumu sağlamak amacıyla Miladi Takvim ve uluslararası saat sistemi kabul edildi. Hicri ve Rumi takvim uygulamasına son verilerek, toplumsal ve ticari hayatta ikilikler ortadan kaldırıldı.',
         category: 'reform',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_Ankara_1925.jpg',
-                label: 'Ankara\'da Modern Yaşam'
-            }
-        ]
     },
     {
         id: '55',
@@ -885,7 +791,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_delivering_Nutuk.jpg',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Atat%C3%BCrk_TBMM%27de_Nutuk%27u_Okuyor.jpg',
                 label: 'Nutuk Okurken'
             }
         ]
@@ -931,12 +837,6 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         coordinates: [39.9334, 32.8597],
         description: 'Türk tarihinin köklerini araştırmak (Atatürk\'ün deyimiyle "Tarih yazmak, tarih yapmak kadar mühimdir") ve Türklerin dünya medeniyetine katkılarını ortaya koymak amacıyla Türk Tarihi Tetkik Cemiyeti\'ni (Türk Tarih Kurumu) kurdu.',
         category: 'reform',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_visiting_schools.jpg',
-                label: 'Tarih Çalışmaları'
-            }
-        ]
     },
     {
         id: '59',
@@ -949,7 +849,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1931.jpg',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Ataturk1930s.jpg/250px-Ataturk1930s.jpg',
                 label: 'Cumhurbaşkanı Atatürk'
             }
         ]
@@ -965,7 +865,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'reform',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_Geometri.jpg',
+                url: 'https://isteataturk.com/upload/images/1933_01_04-T%C3%BCrk%20Dil%20Kurumu%20toplant%C4%B1s%C4%B1na%20ba%C5%9Fkanl%C4%B1k%20ederken%20(4%20Ocak%201933)_%20(2).jpg',
                 label: 'Dil ve Geometri Çalışmaları'
             }
         ]
@@ -981,7 +881,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'personal',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_Yalova.jpg',
+                url: 'https://yalova.org/wp-content/uploads/2014/05/ataturk-ve-yalova.jpg',
                 label: 'Yalova Günleri'
             }
         ]
@@ -997,7 +897,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'reform',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_portrait.jpg',
+                url: 'https://lh6.googleusercontent.com/proxy/-YIzQwdVm-Q5gUHIn7Z4I1GuJddaStWVxEm_uLaM3oDU9BUTyvXKIOfBXtTLUIoChXxxj3yODvSVGY8o7ptn',
                 label: 'Gazi Mustafa Kemal Atatürk'
             }
         ]
@@ -1029,7 +929,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'personal',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Anitkabir_Overview.jpg',
+                url: 'https://image.milimaj.com/i/milliyet/75/869x477/5f16dcb455428117f80cea94.jpg',
                 label: 'Anıtkabir'
             },
             {

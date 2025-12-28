@@ -13,7 +13,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         msbLink: 'https://ata.msb.gov.tr/Genel/icerik/ataturkun-hayati',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Atatürk_House_Museum_%28Thessaloniki%29.jpg',
+                url: 'https://ata.msb.gov.tr/Upload/Images/ataturkun_ailesi/00image24720202.jpg',
                 label: 'The Pink House (Birthplace)'
             },
             {
@@ -31,12 +31,6 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         coordinates: [40.6401, 22.9444],
         description: 'Driven by an early interest in the military profession, he secretly took the entrance exam and enrolled in the Thessaloniki Military Junior High School without his mother\'s knowledge. Here, he stood out with his superior talent in mathematics and mature personality. His math teacher, Captain Mustafa Efendi, gave him the name "Kemal," meaning "maturity in knowledge and virtue," saying, "Your name is Mustafa, mine is too. Let there be a difference."',
         category: 'education',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1905.jpg',
-                label: 'Student Years'
-            }
-        ]
     },
     {
         id: '3',
@@ -97,8 +91,8 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1906_Damascus.jpg',
-                label: '5th Army in Damascus (1906)'
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Atatürk_as_a_alumni_of_Ottoman_Military_Academy,_1905.jpg',
+                label: 'Staff Captain Mustafa Kemal (1905)'
             }
         ]
     },
@@ -113,8 +107,8 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1905.jpg',
-                label: 'Young Staff Officer'
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1906_Damascus.jpg',
+                label: 'Vatan ve Hurriyet in Damascus (1906)'
             }
         ]
     },
@@ -129,8 +123,8 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1906_Damascus.jpg',
-                label: 'Senior Captain Mustafa Kemal'
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Kurmay_Yüzbaşı_Mustafa_Kemal_arkadaşları_ile_birlikte,_Şam,_Haziran_1907.png',
+                label: 'Senior Captain Mustafa Kemal (June 1907)'
             }
         ]
     },
@@ -145,7 +139,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_and_comrades_in_Salonika.jpg',
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal,_Selanik,_1909.png',
                 label: 'With Comrades in Thessaloniki'
             }
         ]
@@ -161,8 +155,8 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Hareket_Ordusu_Kurmay_Baskanı_Mustafa_Kemal.jpg',
-                label: 'Chief of Staff of the Action Army'
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Hareket_Ordusu_-_Staff_of_the_Turkish_Action_Army,_1909.jpg',
+                label: 'Staff of the Action Army (1909)'
             }
         ]
     },
@@ -170,15 +164,15 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         id: '11',
         year: 1910,
         date: '1910',
-        title: 'Albanian Operation',
-        location: 'Albania',
-        coordinates: [41.1533, 20.1683],
-        description: 'He actively served as Chief of Staff of the troops commanded by Minister of War Mahmud Sevket Pasha in suppressing the rebellion in Albania. During this operation, he reinforced his experience in the deployment and administration of troops in difficult geographical conditions.',
+        title: 'Picardie Maneuvers',
+        location: 'Picardy, France',
+        coordinates: [49.8941, 2.2957],
+        description: 'After his duty in the Albanian Campaign, he participated in the Picardie Maneuvers in France as an observer representing the Ottoman Army. Here, he had the opportunity to examine the state of European armies, new weapons, and the use of aircraft for military purposes. He exchanged ideas with his Western colleagues.',
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_Picardie_Maneuvers_2.jpg',
-                label: '1910 Picardie Maneuvers'
+                url: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Les_Manoeuvres_de_Picardie.jpg',
+                label: 'Picardie Maneuvers (1910)'
             }
         ]
     },
@@ -191,12 +185,6 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         coordinates: [41.0082, 28.9784],
         description: 'He was transferred from his duty in Thessaloniki to the General Staff Headquarters in Istanbul. Here, he worked on the modernization and training of the Ottoman army, translated military manuals, and analyzed the army\'s readiness for war.',
         category: 'military',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1911.jpg',
-                label: 'Istanbul General Staff Headquarters'
-            }
-        ]
     },
     {
         id: '13',
@@ -209,7 +197,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Bey_(1911).jpg',
+                url: 'https://isteataturk.com/gorseller/1616006839_ataturk.png',
                 label: 'Major Mustafa Kemal'
             }
         ]
@@ -225,7 +213,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1911_Tripolitania.jpg',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/3/32/Ataturk5.JPG',
                 label: 'Tripoli Front'
             }
         ]
@@ -239,12 +227,6 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         coordinates: [32.0836, 23.9764],
         description: 'He led the Battle of Tobruk against the Italian army with units formed from local forces in Tripoli and won a great victory. This success was his first major military achievement that brought his military genius and leadership skills to international attention.',
         category: 'military',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_and_Enver_in_Tripoli_1912.jpg',
-                label: 'Tobruk Front Commanders'
-            }
-        ]
     },
     {
         id: '16',
@@ -271,12 +253,6 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         coordinates: [42.6977, 23.3219],
         description: 'He was promoted to the rank of Lieutenant Colonel while on duty in Sofia. Upon the outbreak of World War I, he persistently requested an active duty assignment to go to the front.',
         category: 'military',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_Sofia_1914.jpg',
-                label: 'Military Attaché Sofia'
-            }
-        ]
     },
     {
         id: '18',
@@ -289,8 +265,8 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal,_Gallipoli.jpg',
-                label: 'Gallipoli Front'
+                url: 'https://i0.wp.com/www.akademiktarihtr.com/wp-content/uploads/2019/05/foto1.jpg?resize=376%2C480&ssl=1',
+                label: '19th Division Command'
             }
         ]
     },
@@ -318,13 +294,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         location: 'Gallipoli',
         coordinates: [40.1553, 26.4142],
         description: 'He was promoted to the rank of Colonel due to his superior achievements, foresight, and courage on the Gallipoli Front. This promotion increased his prestige within the army and the size of the units he commanded.',
-        category: 'military',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Chanak_1915.jpg',
-                label: 'Commander of Anafartalar Group'
-            }
-        ]
+        category: 'military'
     },
     {
         id: '21',
@@ -337,7 +307,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_in_Gallipoli.jpg',
+                url: 'https://isteataturk.com/gorseller/1507921871_ataturk.png',
                 label: 'Hero of Anafartalar'
             }
         ]
@@ -353,8 +323,8 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_Edirne_1916.jpg',
-                label: 'Visit to Edirne (1916)'
+                url: 'https://upload.wikimedia.org/wikipedia/commons/3/3e/16._Kolordu_Komutan%C4%B1_Mustafa_Kemal_Pa%C5%9Fa%2C_Bitlis%2C_16_Kas%C4%B1m_1916.png',
+                label: '16th Corps Command'
             }
         ]
     },
@@ -369,7 +339,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Pasha_1916.jpg',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/0/00/Mirliva_Mustafa_Kemal_Pa%C5%9Fa.jpg',
                 label: 'Brigadier General Mustafa Kemal Pasha'
             }
         ]
@@ -401,8 +371,8 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/General_Mustafa_Kemal_in_Aleppo,_1917.jpg',
-                label: 'General Mustafa Kemal in Aleppo'
+                url: 'https://isteataturk.com/gorseller/1571766931_ataturk.jpg',
+                label: '7th Army Command'
             }
         ]
     },
@@ -415,12 +385,6 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         coordinates: [41.0082, 28.9784],
         description: 'He returned to Istanbul after his resignation. During this period, he accompanied Crown Prince Vahdettin on a visit to Germany. Based on his observations at German headquarters, he clearly expressed that the war would be lost.',
         category: 'military',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_and_Vahdettin_in_Germany.jpg',
-                label: 'Germany Trip'
-            }
-        ]
     },
     {
         id: '27',
@@ -433,7 +397,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1918.jpg',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/9/98/AtaturkYildirim.jpg',
                 label: 'Commander of Yildirim Armies'
             }
         ]
@@ -449,11 +413,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandirma_Steamboat.jpg',
-                label: 'Bandırma Ferry'
-            },
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Samsun_1919.jpg',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/9/98/Atat%C3%BCrk%C3%BCn_Samsuna_%C3%87%C4%B1k%C4%B1%C5%9F%C4%B1.jpg',
                 label: 'Landing in Samsun'
             }
         ]
@@ -469,7 +429,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Atatürk_in_Havza_1919.jpg',
+                url: 'https://www.derintarih.com/wp-content/uploads/2019/04/bugra.ekinci.jpg',
                 label: 'Days in Havza'
             }
         ]
@@ -485,8 +445,8 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Amasya_Genelgesi.pdf',
-                label: 'Amasya Circular Document'
+                url: 'https://media.cumhuriyet.com.tr/Archive//2023/6/21/2092746/kapak_222248.jpg',
+                label: 'Amasya Circular'
             }
         ]
     },
@@ -499,12 +459,6 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         coordinates: [39.9043, 41.2679],
         description: 'In the face of the Istanbul Government\'s attempts to dismiss him and calls for his return, he resigned from his beloved military profession and official duties. He announced that he would continue the struggle as "an individual within the bosom of the nation."',
         category: 'political',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Erzurum_1919_civilian.jpg',
-                label: 'Civilian Mustafa Kemal'
-            }
-        ]
     },
     {
         id: '32',
@@ -547,12 +501,6 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         coordinates: [39.9043, 41.2679],
         description: 'He was elected as a deputy from Erzurum in the elections for the last Ottoman Chamber of Deputies to meet in Istanbul. However, due to security reasons, he did not go to Istanbul and conducted his activities from Anatolia.',
         category: 'political',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_Erzurum_1919.jpg',
-                label: 'Days in Erzurum'
-            }
-        ]
     },
     {
         id: '35',
@@ -565,7 +513,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Atatürk_arrives_in_Ankara_1919.jpg',
+                url: 'https://21yyte.org/cropImages/1280x720/media/k2/items/src/86cdf30414a5176a77800e8f7783d2cd.jpg',
                 label: 'Welcome in Ankara'
             }
         ]
@@ -581,7 +529,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Opening_of_the_First_Grand_National_Assembly.jpg',
+                url: 'https://www.tesud.org.tr/uploads/editor/upload/images/666.jpg',
                 label: 'First Parliament'
             }
         ]
@@ -595,12 +543,6 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         coordinates: [41.0082, 28.9784],
         description: 'He was tried in absentia by the Court Martial in Istanbul, sentenced to death, and stripped of his ranks. This decision would sharpen his determination to fight rather than break it, and strengthen his bond with the nation.',
         category: 'political',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_portrait_1920s.jpg',
-                label: 'National Struggle Period'
-            }
-        ]
     },
     {
         id: '38',
@@ -613,7 +555,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_as_Commander_in_Chief.jpg',
+                url: 'https://isteataturk.com/gorseller/1508175553_ataturk.jpg',
                 label: 'Commander-in-Chief Mustafa Kemal'
             }
         ]
@@ -645,7 +587,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Pasha_Marshal_Uniform.jpg',
+                url: 'https://isteataturk.com/gorseller/1509518667_ataturk.png',
                 label: 'In Marshal Uniform'
             }
         ]
@@ -661,8 +603,8 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_observing_the_Great_Offensive.jpg',
-                label: 'Observation at Kocatepe'
+                url: 'https://www.istanbulbarosu.org.tr/files/haber/18182/orj/Bu%CC%88yu%CC%88kTaarruz.jpg',
+                label: 'Great Offensive'
             }
         ]
     },
@@ -670,14 +612,14 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         id: '42',
         year: 1922,
         date: 'August 30, 1922',
-        title: 'Battle of Dumlupinar',
+        title: 'Commander-in-Chief\'s Field Battle',
         location: 'Dumlupinar',
         coordinates: [38.8611, 29.9753],
         description: 'He destroyed the main Greek forces in the pitched battle he personally led at Dumlupinar. After the victory, he initiated the pursuit operation by issuing the order "Armies! Your first target is the Mediterranean, forward!"',
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_in_Dumlupınar.jpg',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Greek_soldiers_at_Afyon_Karahisar%2C_1922.jpg',
                 label: 'Command at the Front'
             }
         ]
@@ -707,12 +649,6 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         coordinates: [39.9334, 32.8597],
         description: 'The sultanate was abolished to prevent the duality that arose when the Istanbul Government was also invited to the Lausanne Peace Conference and to fully establish national sovereignty. Thus, the 600-year-old Ottoman dynastic rule officially ended.',
         category: 'reform',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/TBMM_1922.jpg',
-                label: 'Parliament Proceedings'
-            }
-        ]
     },
     {
         id: '45',
@@ -771,12 +707,6 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         coordinates: [39.9334, 32.8597],
         description: 'He transformed the Association for the Defense of Rights of Anatolia and Rumelia into a political party and founded the People\'s Party. This party, which would later take the name Republican People\'s Party, became the pioneer of revolutions in Turkey\'s modernization process.',
         category: 'political',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_CHP_Kurultayi.jpg',
-                label: 'People\'s Party'
-            }
-        ]
     },
     {
         id: '49',
@@ -789,7 +719,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'reform',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_leaving_the_parliament.jpg',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/10th_Anniversary_Speech.jpg',
                 label: 'Republic Day'
             }
         ]
@@ -803,12 +733,6 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         coordinates: [39.9334, 32.8597],
         description: 'The Caliphate institution, one of the biggest obstacles to a secular state structure, was abolished. On the same day, education was unified with the Law on Unification of Education, and religion and state affairs were separated by abolishing the Ministry of Sharia and Foundations.',
         category: 'reform',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1924.jpg',
-                label: 'Beginning of Revolutions'
-            }
-        ]
     },
     {
         id: '51',
@@ -819,12 +743,6 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         coordinates: [39.9334, 32.8597],
         description: 'The 1924 Constitution (Teskilat-i Esasiye Kanunu), determining the structure and functioning of the new state, was accepted. With this constitution, the principle that sovereignty belongs unconditionally to the nation was reinforced.',
         category: 'reform',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_and_delegates.jpg',
-                label: 'Constitution Discussions'
-            }
-        ]
     },
     {
         id: '52',
@@ -835,12 +753,6 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         coordinates: [39.9334, 32.8597],
         description: 'The Progressive Republican Party, the first opposition party founded by National Struggle commanders like Kazim Karabekir and Rauf Orbay, commenced activities. However, it was closed in 1925 on the grounds that it was connected to the Sheikh Said Rebellion.',
         category: 'political',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_ve_Silah_Arkadaslari.jpg',
-                label: 'With Comrades-in-Arms'
-            }
-        ]
     },
     {
         id: '53',
@@ -867,12 +779,6 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         coordinates: [39.9334, 32.8597],
         description: 'The Gregorian Calendar and the international time system were accepted to ensure harmony with the Western world. The use of Hijri and Rumi calendars was ended, eliminating dualities in social and commercial life.',
         category: 'reform',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_Ankara_1925.jpg',
-                label: 'Modern Life in Ankara'
-            }
-        ]
     },
     {
         id: '55',
@@ -885,7 +791,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_delivering_Nutuk.jpg',
+                url: 'hhttps://upload.wikimedia.org/wikipedia/commons/2/20/Atat%C3%BCrk_TBMM%27de_Nutuk%27u_Okuyor.jpg',
                 label: 'Reading the Nutuk'
             }
         ]
@@ -931,12 +837,6 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         coordinates: [39.9334, 32.8597],
         description: 'He established the Society for the Study of Turkish History (Turkish Historical Society) to research the roots of Turkish history (in Ataturk\'s words, "Writing history is as important as making history") and to reveal the contributions of Turks to world civilization.',
         category: 'reform',
-        gallery: [
-            {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_visiting_schools.jpg',
-                label: 'History Studies'
-            }
-        ]
     },
     {
         id: '59',
@@ -949,7 +849,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_1931.jpg',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Ataturk1930s.jpg/250px-Ataturk1930s.jpg',
                 label: 'President Atatürk'
             }
         ]
@@ -965,7 +865,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'reform',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_Geometri.jpg',
+                url: 'https://isteataturk.com/upload/images/1933_01_04-T%C3%BCrk%20Dil%20Kurumu%20toplant%C4%B1s%C4%B1na%20ba%C5%9Fkanl%C4%B1k%20ederken%20(4%20Ocak%201933)_%20(2).jpg',
                 label: 'Language and Geometry Studies'
             }
         ]
@@ -981,7 +881,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'personal',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_Yalova.jpg',
+                url: 'https://yalova.org/wp-content/uploads/2014/05/ataturk-ve-yalova.jpg',
                 label: 'Days in Yalova'
             }
         ]
@@ -997,7 +897,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'reform',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_portrait.jpg',
+                url: 'https://lh6.googleusercontent.com/proxy/-YIzQwdVm-Q5gUHIn7Z4I1GuJddaStWVxEm_uLaM3oDU9BUTyvXKIOfBXtTLUIoChXxxj3yODvSVGY8o7ptn',
                 label: 'Gazi Mustafa Kemal Atatürk'
             }
         ]
@@ -1029,7 +929,7 @@ export const ATATURK_CHRONOLOGY_EN: HistoricalEvent[] = [
         category: 'personal',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Anitkabir_Overview.jpg',
+                url: 'https://image.milimaj.com/i/milliyet/75/869x477/5f16dcb455428117f80cea94.jpg',
                 label: 'Anitkabir'
             },
             {
