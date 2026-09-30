@@ -1,28 +1,19 @@
 'use client';
 
-import { useState, useMemo, useEffect, useRef } from 'react';
-import dynamic from 'next/dynamic';
-import { MapContainer, TileLayer } from 'react-leaflet';
+import { useState, useEffect, useRef } from 'react';
 import { HistoricalEvent } from '@/lib/types';
 import { ATATURK_CHRONOLOGY } from '@/lib/data/events';
 import { ATATURK_CHRONOLOGY_EN } from '@/lib/data/events-en';
 import EventGallery from './EventGallery';
 import EventInfoCard from './EventInfoCard';
 import EventTimeline from './EventTimeline';
-import EventMarker from './EventMarker';
+import MapLibreView from './MapLibreView';
 import { LanguageProvider, useLanguage } from '@/lib/context/LanguageContext';
-import { Globe, Play, Square, Pause, Search } from 'lucide-react';
+import { Globe, Play, Pause, Search } from 'lucide-react';
 import { useTTS } from '@/lib/hooks/useTTS';
 import SearchOverlay from './SearchOverlay';
 import { getEventsOnThisDay } from '@/lib/utils/dateUtils';
 import OnThisDayNotification from './OnThisDayNotification';
-
-// Dynamically import MapRefocus to avoid SSR issues
-const MapRefocus = dynamic(() => import('./MapRefocus'), { ssr: false });
-
-const isValidCoords = (coords: any): coords is [number, number] => {
-    return Array.isArray(coords) && coords.length === 2 && !isNaN(coords[0]) && !isNaN(coords[1]);
-};
 
 function AtaturkMapContent() {
     const { language, setLanguage } = useLanguage();
@@ -31,7 +22,6 @@ function AtaturkMapContent() {
     // Initialize with the first event
     const [selectedEvent, setSelectedEvent] = useState<HistoricalEvent>(currentEvents[0]);
     const [showInfo, setShowInfo] = useState(true);
-    const [mapZoom] = useState(9); // Default zoom increased as requested
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [onThisDayEvent, setOnThisDayEvent] = useState<HistoricalEvent | null>(null);
 
@@ -122,11 +112,6 @@ function AtaturkMapContent() {
             setShowInfo(true);
         }
     };
-
-    // Safe initial center
-    const initialCenter = useMemo(() => {
-        return isValidCoords(selectedEvent.coordinates) ? selectedEvent.coordinates : [39.9334, 32.8597];
-    }, []);
 
     const toggleLanguage = () => {
         setLanguage(language === 'tr' ? 'en' : 'tr');
@@ -251,30 +236,12 @@ function AtaturkMapContent() {
                         </div>
                     </button>
                 </div>
-                <MapContainer
-                    key={`map-${language}`}
-                    center={initialCenter as [number, number]}
-                    zoom={mapZoom}
-                    className="w-full h-full"
-                    zoomControl={false}
-                    scrollWheelZoom={true}
-                >
-                    <TileLayer
-                        url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
-                        className="map-tiles-grayscale"
-                    />
-                    <MapRefocus event={selectedEvent} zoom={mapZoom} />
-
-                    {currentEvents.map(event => (
-                        <EventMarker
-                            key={event.id}
-                            event={event}
-                            onSelect={handleEventSelect}
-                            isSelected={selectedEvent.id === event.id}
-                        />
-                    ))}
-                </MapContainer>
+                <MapLibreView
+                    events={currentEvents}
+                    selectedEvent={selectedEvent}
+                    onSelectEvent={handleEventSelect}
+                    language={language}
+                />
 
                 <EventInfoCard
                     event={selectedEvent}
@@ -282,6 +249,8 @@ function AtaturkMapContent() {
                     onToggle={() => setShowInfo(!showInfo)}
                     isSpeaking={isSpeaking}
                     onToggleSpeech={toggleSpeech}
+                    allEvents={currentEvents}
+                    onSelectEvent={handleEventSelect}
                 />
 
                 <EventTimeline

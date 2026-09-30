@@ -10,7 +10,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         coordinates: [40.6401, 22.9444],
         description: '1881 yılında, o dönemde Osmanlı İmparatorluğu\'nun kozmopolit yapısıyla dikkat çeken Selanik şehrinde, Koca Kasım Paşa Mahallesi\'ndeki üç katlı pembe evde dünyaya geldi. Babası Gümrük Muhafaza Memurluğu yapan Ali Rıza Efendi, annesi ise köklü bir Türk ailesine mensup Zübeyde Hanım\'dır. Bu mütevazı başlangıç, yıkılmakta olan bir imparatorluğun küllerinden modern bir cumhuriyet kuracak olan liderin hayat yolculuğunun ilk adımıydı.',
         category: 'personal',
-        msbLink: 'https://ata.msb.gov.tr/Genel/icerik/ataturkun-hayati',
+        msbLink: 'https://ataturkansiklopedisi.gov.tr/',
         gallery: [
             {
                 url: 'https://ata.msb.gov.tr/Upload/Images/ataturkun_ailesi/00image24720202.jpg',
@@ -21,7 +21,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
                 label: 'Annesi Zübeyde Hanım'
             },
             {
-                url: 'https://isteataturk.com/gorseller/1508350591_ataturk.jpg',
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ali_R%C4%B1za_Efendi.jpg',
                 label: 'Babası Ali Rıza Efendi'
             }
         ]
@@ -201,7 +201,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://isteataturk.com/gorseller/1616006839_ataturk.png',
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_at_Derna%2C_1912.JPG',
                 label: 'Binbaşı Mustafa Kemal'
             }
         ]
@@ -311,7 +311,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://isteataturk.com/gorseller/1507921871_ataturk.png',
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_at_Gallipoli_1915.jpg',
                 label: 'Anafartalar Kahramanı'
             }
         ]
@@ -375,7 +375,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://isteataturk.com/gorseller/1571766931_ataturk.jpg',
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_1917.jpg',
                 label: '7. Ordu Komutanı'
             }
         ]
@@ -559,7 +559,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://isteataturk.com/gorseller/1508175553_ataturk.jpg',
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Pasha_Sakarya_1921.jpg',
                 label: 'Başkomutan Mustafa Kemal'
             }
         ]
@@ -591,7 +591,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://isteataturk.com/gorseller/1509518667_ataturk.png',
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atat%C3%BCrk_1923.jpg',
                 label: 'Mareşal Üniformalı'
             }
         ]
@@ -869,7 +869,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'reform',
         gallery: [
             {
-                url: 'https://isteataturk.com/upload/images/1933_01_04-T%C3%BCrk%20Dil%20Kurumu%20toplant%C4%B1s%C4%B1na%20ba%C5%9Fkanl%C4%B1k%20ederken%20(4%20Ocak%201933)_%20(2).jpg',
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Atat%C3%BCrk_at_the_First_Turkish_Language_Congress.jpg',
                 label: 'Dil ve Geometri Çalışmaları'
             }
         ]
@@ -901,7 +901,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'reform',
         gallery: [
             {
-                url: 'https://lh6.googleusercontent.com/proxy/-YIzQwdVm-Q5gUHIn7Z4I1GuJddaStWVxEm_uLaM3oDU9BUTyvXKIOfBXtTLUIoChXxxj3yODvSVGY8o7ptn',
+                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/N%C3%BCfus_C%C3%BCzdan%C4%B1_Atat%C3%BCrk.jpg',
                 label: 'Gazi Mustafa Kemal Atatürk'
             }
         ]

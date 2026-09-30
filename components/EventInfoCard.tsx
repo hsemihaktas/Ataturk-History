@@ -9,10 +9,24 @@ interface EventInfoCardProps {
     onToggle: () => void;
     isSpeaking: boolean;
     onToggleSpeech: () => void;
+    allEvents?: HistoricalEvent[];
+    onSelectEvent?: (event: HistoricalEvent) => void;
 }
 
-export default function EventInfoCard({ event, showInfo, onToggle, isSpeaking, onToggleSpeech }: EventInfoCardProps) {
+export default function EventInfoCard({
+    event,
+    showInfo,
+    onToggle,
+    isSpeaking,
+    onToggleSpeech,
+    allEvents,
+    onSelectEvent
+}: EventInfoCardProps) {
     const { language } = useLanguage();
+
+    const cityEvents = allEvents ? allEvents.filter(e => e.location === event.location) : [];
+    const cityIndex = cityEvents.findIndex(e => e.id === event.id);
+    const hasMultipleCityEvents = cityEvents.length > 1;
 
     // Get correct category labels based on language
     const categoryLabels = language === 'tr' ? CATEGORY_LABELS : CATEGORY_LABELS_EN;
@@ -76,8 +90,39 @@ export default function EventInfoCard({ event, showInfo, onToggle, isSpeaking, o
 
                     <h2 className="text-xl md:text-2xl font-bold text-zinc-900 mb-2 leading-tight">{event.title}</h2>
 
-                    <div className="flex items-center gap-1 text-xs text-red-600 font-bold mb-4">
-                        <MapPin size={12} className="w-3.5 h-3.5" /> {event.location} <span className="text-zinc-300 mx-1">|</span> {event.date}
+                    <div className="flex items-center justify-between gap-2 mb-4">
+                        <div className="flex items-center gap-1 text-xs text-red-600 font-bold">
+                            <MapPin size={12} className="w-3.5 h-3.5" /> {event.location} <span className="text-zinc-300 mx-1">|</span> {event.date}
+                        </div>
+                        {hasMultipleCityEvents && (
+                            <div className="flex items-center gap-1.5 bg-zinc-100 hover:bg-zinc-200/80 transition-colors rounded-full px-2.5 py-0.5 text-[11px] font-bold text-zinc-700">
+                                <span>{cityIndex + 1} / {cityEvents.length}</span>
+                                <div className="flex items-center gap-0.5 ml-1 border-l border-zinc-300 pl-1">
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            const prevIdx = (cityIndex - 1 + cityEvents.length) % cityEvents.length;
+                                            onSelectEvent?.(cityEvents[prevIdx]);
+                                        }}
+                                        className="w-4 h-4 flex items-center justify-center rounded hover:bg-zinc-300/80 text-zinc-800 text-xs font-black transition"
+                                        title={language === 'tr' ? 'Bu şehirdeki önceki olay' : 'Previous event in this city'}
+                                    >
+                                        ‹
+                                    </button>
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            const nextIdx = (cityIndex + 1) % cityEvents.length;
+                                            onSelectEvent?.(cityEvents[nextIdx]);
+                                        }}
+                                        className="w-4 h-4 flex items-center justify-center rounded hover:bg-zinc-300/80 text-zinc-800 text-xs font-black transition"
+                                        title={language === 'tr' ? 'Bu şehirdeki sonraki olay' : 'Next event in this city'}
+                                    >
+                                        ›
+                                    </button>
+                                </div>
+                            </div>
+                        )}
                     </div>
 
                     <p className="text-zinc-600 text-sm leading-relaxed mb-6 font-medium line-clamp-6 md:line-clamp-none">
