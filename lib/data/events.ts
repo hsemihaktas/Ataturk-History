@@ -13,15 +13,15 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         msbLink: 'https://ataturkansiklopedisi.gov.tr/',
         gallery: [
             {
-                url: 'https://ata.msb.gov.tr/Upload/Images/ataturkun_ailesi/00image24720202.jpg',
+                url: '/images/events/01_dogdugu_pembe_ev.jpg',
                 label: 'Doğduğu Pembe Ev'
             },
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Zübeyde_Hanım.jpg',
+                url: '/images/events/02_annesi_zubeyde_hanim.jpg',
                 label: 'Annesi Zübeyde Hanım'
             },
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ali_R%C4%B1za_Efendi.jpg',
+                url: '/images/events/03_babasi_ali_riza_efendi.jpg',
                 label: 'Babası Ali Rıza Efendi'
             }
         ]
@@ -47,7 +47,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'education',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Monastir_Military_High_School.jpg',
+                url: '/images/events/04_manastir_askeri_i_dadisi.jpg',
                 label: 'Manastır Askeri İdadisi'
             }
         ]
@@ -63,7 +63,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'education',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk,_Ottoman_War_Academy,_1901.jpg',
+                url: '/images/events/05_harp_okulu_ogrencisi_1901_.jpg',
                 label: 'Harp Okulu Öğrencisi (1901)'
             }
         ]
@@ -79,7 +79,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'education',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Atatürk_as_a_alumni_of_Ottoman_Military_Academy,_1905.jpg',
+                url: '/images/events/06_harp_akademisi_mezuniyeti.jpg',
                 label: 'Harp Akademisi Mezuniyeti'
             }
         ]
@@ -95,7 +95,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Atatürk_as_a_alumni_of_Ottoman_Military_Academy,_1905.jpg',
+                url: '/images/events/07_kurmay_yuzbasi_mustafa_kemal_1905_.jpg',
                 label: 'Kurmay Yüzbaşı Mustafa Kemal (1905)'
             }
         ]
@@ -127,7 +127,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Kurmay_Yüzbaşı_Mustafa_Kemal_arkadaşları_ile_birlikte,_Şam,_Haziran_1907.png',
+                url: '/images/events/08_kolagasi_mustafa_kemal_haziran_1907_.png',
                 label: 'Kolağası Mustafa Kemal (Haziran 1907)'
             }
         ]
@@ -143,7 +143,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal,_Selanik,_1909.png',
+                url: '/images/events/09_selanik_ve_i_ttihat_terakki_gunleri.png',
                 label: 'Selanik ve İttihat Terakki Günleri'
             }
         ]
@@ -159,7 +159,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Hareket_Ordusu_-_Staff_of_the_Turkish_Action_Army,_1909.jpg',
+                url: '/images/events/10_hareket_ordusu_kurmay_heyeti_1909_.jpg',
                 label: 'Hareket Ordusu Kurmay Heyeti (1909)'
             }
         ]
@@ -175,7 +175,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Les_Manoeuvres_de_Picardie.jpg',
+                url: '/images/events/11_picardie_manevralari_1910_.jpg',
                 label: 'Picardie Manevraları (1910)'
             }
         ]
@@ -201,7 +201,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_at_Derna%2C_1912.JPG',
+                url: '/images/events/12_binbasi_mustafa_kemal.jpg',
                 label: 'Binbaşı Mustafa Kemal'
             }
         ]
@@ -217,7 +217,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/3/32/Ataturk5.JPG',
+                url: '/images/events/13_trablusgarp_cephesi.jpg',
                 label: 'Trablusgarp Cephesi'
             }
         ]
@@ -269,7 +269,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://i0.wp.com/www.akademiktarihtr.com/wp-content/uploads/2019/05/foto1.jpg?resize=376%2C480&ssl=1',
+                url: '/images/events/14_19_tumen_komutanligi.jpg',
                 label: '19. Tümen Komutanlığı'
             }
         ]
@@ -285,7 +285,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Turkish_trenches_at_Gallipoli.jpg',
+                url: '/images/events/15_canakkale_siperleri.jpg',
                 label: 'Çanakkale Siperleri'
             }
         ]
@@ -311,7 +311,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_at_Gallipoli_1915.jpg',
+                url: '/images/events/16_anafartalar_kahramani.jpg',
                 label: 'Anafartalar Kahramanı'
             }
         ]
@@ -327,7 +327,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/3/3e/16._Kolordu_Komutan%C4%B1_Mustafa_Kemal_Pa%C5%9Fa%2C_Bitlis%2C_16_Kas%C4%B1m_1916.png',
+                url: '/images/events/17_16_kolordu_komutani.png',
                 label: '16. Kolordu Komutanı'
             }
         ]
@@ -343,7 +343,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/0/00/Mirliva_Mustafa_Kemal_Pa%C5%9Fa.jpg',
+                url: '/images/events/18_mirliva_mustafa_kemal_pasa.jpg',
                 label: 'Mirliva Mustafa Kemal Paşa'
             }
         ]
@@ -359,7 +359,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk-1916-Bitlis.jpg',
+                url: '/images/events/19_bitlis_cephesi_1916_.jpg',
                 label: 'Bitlis Cephesi (1916)'
             }
         ]
@@ -375,7 +375,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_1917.jpg',
+                url: '/images/events/20_7_ordu_komutani.jpg',
                 label: '7. Ordu Komutanı'
             }
         ]
@@ -401,7 +401,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/9/98/AtaturkYildirim.jpg',
+                url: '/images/events/21_yildirim_ordulari_komutani.jpg',
                 label: 'Yıldırım Orduları Komutanı'
             }
         ]
@@ -433,7 +433,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://www.derintarih.com/wp-content/uploads/2019/04/bugra.ekinci.jpg',
+                url: '/images/events/22_havza_gunleri.jpg',
                 label: 'Havza Günleri'
             }
         ]
@@ -449,7 +449,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://media.cumhuriyet.com.tr/Archive//2023/6/21/2092746/kapak_222248.jpg',
+                url: '/images/events/23_amasya_genelgesi.jpg',
                 label: 'Amasya Genelgesi'
             }
         ]
@@ -475,7 +475,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Erzurum_Kongresi_Binası,_Yakutiye-Erzurum.jpg',
+                url: '/images/events/24_erzurum_kongresi_binasi.jpg',
                 label: 'Erzurum Kongresi Binası'
             }
         ]
@@ -491,7 +491,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Ataturk_1919_Sivas_Congress.jpg',
+                url: '/images/events/25_sivas_kongresi_delegeleri.jpg',
                 label: 'Sivas Kongresi Delegeleri'
             }
         ]
@@ -533,7 +533,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://www.tesud.org.tr/uploads/editor/upload/images/666.jpg',
+                url: '/images/events/26_birinci_meclis.jpg',
                 label: 'Birinci Meclis'
             }
         ]
@@ -559,7 +559,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Pasha_Sakarya_1921.jpg',
+                url: '/images/events/27_baskomutan_mustafa_kemal.jpg',
                 label: 'Başkomutan Mustafa Kemal'
             }
         ]
@@ -575,7 +575,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Battle_of_Sakarya_1921.jpg',
+                url: '/images/events/28_sakarya_savasi.jpg',
                 label: 'Sakarya Savaşı'
             }
         ]
@@ -591,7 +591,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atat%C3%BCrk_1923.jpg',
+                url: '/images/events/29_maresal_uniformali.png',
                 label: 'Mareşal Üniformalı'
             }
         ]
@@ -607,7 +607,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://www.istanbulbarosu.org.tr/files/haber/18182/orj/Bu%CC%88yu%CC%88kTaarruz.jpg',
+                url: '/images/events/30_buyuk_taarruz.jpg',
                 label: 'Büyük Taarruz'
             }
         ]
@@ -623,7 +623,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'military',
         gallery: [
             {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Greek_soldiers_at_Afyon_Karahisar%2C_1922.jpg',
+                url: '/images/events/31_cephede_komuta.jpg',
                 label: 'Cephede Komuta'
             }
         ]
@@ -665,7 +665,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'personal',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_Atatürk_and_Latife_Uşşaki_(1923).jpg',
+                url: '/images/events/32_mustafa_kemal_ve_latife_hanim.jpg',
                 label: 'Mustafa Kemal ve Latife Hanım'
             }
         ]
@@ -681,7 +681,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'reform',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/1923_İktisat_kongresi_İGZ.jpg',
+                url: '/images/events/33_i_ktisat_kongresi.jpg',
                 label: 'İktisat Kongresi'
             }
         ]
@@ -697,7 +697,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_in_1923.jpg',
+                url: '/images/events/34_meclis_baskani.jpg',
                 label: 'Meclis Başkanı'
             }
         ]
@@ -723,7 +723,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'reform',
         gallery: [
             {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/10th_Anniversary_Speech.jpg',
+                url: '/images/events/35_cumhuriyet_bayrami.jpg',
                 label: 'Cumhuriyet Bayramı'
             }
         ]
@@ -769,7 +769,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'reform',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Atatürk_Kastamonu_1925.jpg',
+                url: '/images/events/36_kastamonu_sapka_devrimi.jpg',
                 label: 'Kastamonu Şapka Devrimi'
             }
         ]
@@ -795,7 +795,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Atat%C3%BCrk_TBMM%27de_Nutuk%27u_Okuyor.jpg',
+                url: '/images/events/37_nutuk_okurken.jpg',
                 label: 'Nutuk Okurken'
             }
         ]
@@ -811,7 +811,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'reform',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Kemal_harf_devriminde.jpg',
+                url: '/images/events/38_basogretmen_ataturk.jpg',
                 label: 'Başöğretmen Atatürk'
             }
         ]
@@ -827,7 +827,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_and_Fethi_Okyar.jpg',
+                url: '/images/events/39_fethi_okyar_ile.jpg',
                 label: 'Fethi Okyar ile'
             }
         ]
@@ -853,7 +853,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Ataturk1930s.jpg/250px-Ataturk1930s.jpg',
+                url: '/images/events/40_cumhurbaskani_ataturk.jpg',
                 label: 'Cumhurbaşkanı Atatürk'
             }
         ]
@@ -869,7 +869,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'reform',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Atat%C3%BCrk_at_the_First_Turkish_Language_Congress.jpg',
+                url: '/images/events/41_dil_ve_geometri_calismalari.jpg',
                 label: 'Dil ve Geometri Çalışmaları'
             }
         ]
@@ -885,7 +885,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'personal',
         gallery: [
             {
-                url: 'https://yalova.org/wp-content/uploads/2014/05/ataturk-ve-yalova.jpg',
+                url: '/images/events/42_yalova_gunleri.jpg',
                 label: 'Yalova Günleri'
             }
         ]
@@ -901,7 +901,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'reform',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/N%C3%BCfus_C%C3%BCzdan%C4%B1_Atat%C3%BCrk.jpg',
+                url: '/images/events/43_gazi_mustafa_kemal_ataturk.jpg',
                 label: 'Gazi Mustafa Kemal Atatürk'
             }
         ]
@@ -917,7 +917,7 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'political',
         gallery: [
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_visited_Adana.jpg',
+                url: '/images/events/44_guney_seyahati.jpg',
                 label: 'Güney Seyahati'
             }
         ]
@@ -933,11 +933,11 @@ export const ATATURK_CHRONOLOGY: HistoricalEvent[] = [
         category: 'personal',
         gallery: [
             {
-                url: 'https://image.milimaj.com/i/milliyet/75/869x477/5f16dcb455428117f80cea94.jpg',
+                url: '/images/events/45_anitkabir.jpg',
                 label: 'Anıtkabir'
             },
             {
-                url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ataturk_deathbed_Dolmabahce_March_2008.JPG',
+                url: '/images/events/46_dolmabahce_sarayi_vefat_odasi_.jpg',
                 label: 'Dolmabahçe Sarayı (Vefat Odası)'
             }
         ]

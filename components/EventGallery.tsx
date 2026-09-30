@@ -36,7 +36,8 @@ export default function EventGallery({ event }: EventGalleryProps) {
                                 src={asset.url}
                                 alt={asset.label}
                                 className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-700"
-                                loading="lazy"
+                                loading="eager"
+                                decoding="async"
                             />
                         </div>
                         <div className="mt-3 md:mt-5 text-center px-1">
